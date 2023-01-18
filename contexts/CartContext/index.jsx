@@ -27,19 +27,26 @@ export default function CartProvider({children}) {
         const copyProductCart=[...productCart]
         const item=copyProductCart.find((product)=>product.id ===id)
 
-        if(item.qtd>1){
+        if(item.qtd>=1){
             item.qtd=item.qtd-1
             setProductCart(copyProductCart)
         }
         else{
-            const arrayfiltered=copyProductCart.filter((product)=>product.id != id)
+            const arrayfiltered=copyProductCart.filter((product)=>product.id !== id)
             setProductCart(arrayfiltered)
+            console.log(copyProductCart)
         }
-        console.log(arrayfiltered)
+       
     }   
 
+    function clearCart(){
+        setProductCart([])
+        
+    }
+   
+
   return (
-    <CartContext.Provider value={{productCart,addToCart,removeCart}}>
+    <CartContext.Provider value={{productCart,addToCart,removeCart,clearCart}}>
     {children}
     </CartContext.Provider>
   )

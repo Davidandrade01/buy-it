@@ -34,6 +34,7 @@ export default function Details({product}) {
     productCart = [],
     addToCart,
     removeCart,
+    clearCart
     
     
    
@@ -81,6 +82,7 @@ export default function Details({product}) {
            </div> 
            <button onClick={() => addToCart(product.id)}>+</button>
            <button onClick={() => removeCart(product.id)}>-</button>
+           <button onClick={clearCart}>Clear cart</button>
            
 
           <button  className='primary-button w-full' type='button'>  to cart
