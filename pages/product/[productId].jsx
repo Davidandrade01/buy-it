@@ -3,6 +3,8 @@ import React from 'react'
 import Link from 'next/link'
 import {AiFillStar} from 'react-icons/ai'
 import {IoMdArrowRoundBack} from 'react-icons/io'
+import { CartContext } from '../../Contexts/cartContext'
+import { useContext } from 'react'
 
 
 
@@ -28,8 +30,17 @@ return{ paths, fallback:false}
 
 export default function Details({product}) {
 
+  const {
+    productCart = [],
+    addToCart,
+    removeCart,
+    
+    
+   
+  } = useContext(CartContext);
+
   return (
-    <div>
+    <div  >
        
         
         <div className='py-2'>
@@ -38,7 +49,7 @@ export default function Details({product}) {
           </button> 
         </div>
         
-        <div className='grid md:grid-cols-4 md:gap-3'>
+        <div className='grid md:grid-cols-4 md:gap-3  '>
         <div className='md:col-span-2'>
         <img  src={product.image} alt={product.title} Layout='responsive' />
         </div>
@@ -56,9 +67,25 @@ export default function Details({product}) {
        <div>
         <div className='card p-5'>
           <div className='mb-2 flex justify-between'>
-            <div>Price:</div>
-            <div>{product.price}</div>
+            <div><b>Price:</b></div>
+            <div>€{product.price}</div>
           </div>
+         
+          <div className='flex justify-between mb-2'>
+          <p><b>Calculate a post:</b></p>
+          <input type="text" placeholder='zip code' />
+          </div>
+          <div flex justify-between mb-2>
+          <span><b>Quantity</b>:</span>
+          <p>{productCart.qtd}</p>
+           </div> 
+           <button onClick={() => addToCart(product.id)}>+</button>
+           <button onClick={() => removeCart(product.id)}>-</button>
+           
+
+          <button  className='primary-button w-full' type='button'>  to cart
+          
+          </button>
         </div>
        </div>
  
