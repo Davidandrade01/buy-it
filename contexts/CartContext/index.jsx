@@ -34,9 +34,9 @@ export default function CartProvider({children}) {
         else{
             const arrayfiltered=copyProductCart.filter((product)=>product.id !== id)
             setProductCart(arrayfiltered)
-            console.log(copyProductCart)
+            
         }
-       
+        console.log(copyProductCart)
     }   
 
     function clearCart(){

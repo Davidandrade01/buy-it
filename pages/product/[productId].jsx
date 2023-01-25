@@ -78,7 +78,7 @@ export default function Details({product}) {
           </div>
           <div flex justify-between mb-2>
           <span><b>Quantity</b>:</span>
-          <p>{productCart.qtd}</p>
+          {productCart.map((product)=> <span key={product.qtd}>{product.qtd}</span>)} 
            </div> 
            <button onClick={() => addToCart(product.id)}>+</button>
            <button onClick={() => removeCart(product.id)}>-</button>
