@@ -1,19 +1,23 @@
-import React, { useState } from 'react'
-import { getItem } from '../services/LocalStorageproducts';
 
-export default function CartScreen() {
-    const [data,setData]=useState(getItem('carrinho') || [])
+import React, { useState } from 'react'
+import { getItem } from '../services/LocalStorageproducts'
+
+export default function Cart() {
+  const [productCart,setData]=useState(getItem('carrinho') || [])
   return (
     <>
-       <div>cart</div>
-        <div>
-        
-            {data.map((product)=> <div key={product.id}>{product.title}</div> )}
-            
-        </div>
-   </>
+  <div> Shopping cart</div>
+    <div>
+      {
+        productCart.length=== 0 ?
+      (<div>Cart is empty!</div>)
+      :
+      (<div>
+          ok!!
+      </div>)
+      }
+    </div>
+    </>
+    
   )
-   
- 
 }
-

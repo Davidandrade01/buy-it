@@ -12,7 +12,7 @@ export default function CartProvider({children}) {
 
         const item=copyProductCart.find((product)=>product.id ===id)
         if(!item){
-            copyProductCart.push({id:id,qtd:1,})
+            copyProductCart.push({id:id,qtd:1})
             
 
         }
@@ -35,14 +35,15 @@ export default function CartProvider({children}) {
         if(item && item.qtd>=1){
             item.qtd=item.qtd-1
             setProductCart(copyProductCart)
-            setItem('carrinho ', copyProductCart)
+           
         }
         else{
             const arrayfiltered=copyProductCart.filter((product)=>product.id !== id)
             setProductCart(arrayfiltered)
-            setItem('carrinho ', copyProductCart)
+            
             
         }
+        setItem('carrinho ', copyProductCart)
         console.log(copyProductCart)
     }   
 
