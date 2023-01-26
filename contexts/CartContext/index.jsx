@@ -5,24 +5,25 @@ import { getItem, setItem } from '../../services/LocalStorageproducts';
 export const CartContext=createContext({})
 
 export default function CartProvider({children}) {
-    const[productCart,setProductCart]=useState(getItem('carrinho') ||[])
+    const[productCart,setProductCart]=useState(getItem('basket') ||[])
 
     function addToCart (id){
         const copyProductCart=[...productCart]
 
-        const item=copyProductCart.find((product)=>product.id ===id)
-        if(!item){
+        const BuyArr=copyProductCart.find((product)=>product.id === id)
+        
+        if(!BuyArr){
             copyProductCart.push({id:id,qtd:1})
             
+            
 
         }
-        else{
-            item.qtd=item.qtd+1
-            
-        }
+       else{
+        BuyArr.qtd=BuyArr.qtd+1
+       }
 
        setProductCart(copyProductCart)
-       setItem('carrinho ', copyProductCart)
+       setItem('basket ', copyProductCart)
 
         console.log(copyProductCart)
         
@@ -30,10 +31,10 @@ export default function CartProvider({children}) {
 
     function removeCart(id){
         const copyProductCart=[...productCart]
-        const item=copyProductCart.find((product)=>product.id ===id)
+        const BuyArr=copyProductCart.find((product)=>product.id ===id)
 
-        if(item && item.qtd>=1){
-            item.qtd=item.qtd-1
+        if(BuyArr && BuyArr.qtd>=1){
+            BuyArr.qtd=BuyArr.qtd-1
             setProductCart(copyProductCart)
            
         }
@@ -43,13 +44,13 @@ export default function CartProvider({children}) {
             
             
         }
-        setItem('carrinho ', copyProductCart)
+        setItem('basket ', copyProductCart)
         console.log(copyProductCart)
     }   
 
     function clearCart(){
         setProductCart([])
-        
+       
     }
    
 

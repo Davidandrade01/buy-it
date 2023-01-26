@@ -22,7 +22,7 @@ export default function Cards({product}) {
   <p className='text-center text-xs m-4'>{product.category}</p>
   <p className='font-bold text-sm text-center m-4 '>{product.title}   </p>
   </div>
-</Link>
+</Link> 
 
 
 

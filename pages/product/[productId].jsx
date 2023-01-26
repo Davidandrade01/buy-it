@@ -76,13 +76,13 @@ export default function Details({product}) {
           <p><b>Calculate a post:</b></p>
           <input type="text" placeholder='zip code' />
           </div>
-          <div flex justify-between mb-2>
+          <div className='flex justify-between mb-2' >
           <span><b>Quantity</b>:</span>
-          {productCart.map((product)=> <span key={product.qtd}>{product.qtd}</span>)} 
-           </div> 
-           <button onClick={() => addToCart(product.id)}>+</button>
-           <button onClick={() => removeCart(product.id)}>-</button>
-           <button onClick={clearCart}>Clear cart</button>
+          {productCart.map((product)=><>{product.qtd}</>)} 
+           </div>   
+           <button className='p-2'  onClick={() => addToCart(product)}>Add</button>
+           <button className='p-2' onClick={() => removeCart(product)}>Sub</button>
+           <button className='p-2' onClick={clearCart}>Clear cart</button>
            
 
           <button  className='primary-button w-full' type='button'>  to cart
