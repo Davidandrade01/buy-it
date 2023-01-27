@@ -5,6 +5,7 @@ import {AiFillStar} from 'react-icons/ai'
 import {IoMdArrowRoundBack} from 'react-icons/io'
 import { CartContext } from '../../Contexts/cartContext'
 import { useContext } from 'react'
+import { V4 as uuid } from 'uuid'
 
 
 

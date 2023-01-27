@@ -1,16 +1,19 @@
-import React, { useState } from 'react'
-import { getItem } from '../services/LocalStorageproducts'
+
+
+
 
 export default function CartPage() {
-    const [data,setData]=useState(getItem('basket')||[])
-    
+ 
+  if (typeof window === "undefined") return null;
+ const resgatar= (localStorage.getItem('basket ')|| [])
+ console.log(resgatar+ 'teste')
+
   return (
     <div>
-      <div>Cart</div>
-      <div>
-        {data.map((e)=><li key={e.id}>{e.id}</li>)}
-      </div>
-        
+    
+
+      {resgatar}
+     
     </div>
   ) 
 }

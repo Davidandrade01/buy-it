@@ -10,16 +10,16 @@ export default function CartProvider({children}) {
     function addToCart (id){
         const copyProductCart=[...productCart]
 
-        const BuyArr=copyProductCart.find((product)=>product.id === id)
+        const BasketArr=copyProductCart.find((product)=>product.id === id)
         
-        if(!BuyArr){
-            copyProductCart.push({id:id,qtd:1})
+        if(!BasketArr){
+            copyProductCart.push({id,qtd:1})
             
             
 
         }
        else{
-        BuyArr.qtd=BuyArr.qtd+1
+        BasketArr.qtd=BasketArr.qtd+1
        }
 
        setProductCart(copyProductCart)
@@ -31,10 +31,10 @@ export default function CartProvider({children}) {
 
     function removeCart(id){
         const copyProductCart=[...productCart]
-        const BuyArr=copyProductCart.find((product)=>product.id ===id)
+        const BasketArr=copyProductCart.find((product)=>product.id ===id)
 
-        if(BuyArr && BuyArr.qtd>=1){
-            BuyArr.qtd=BuyArr.qtd-1
+        if(BasketArr && BasketArr.qtd>=1){
+            BasketArr.qtd=BasketArr.qtd-1
             setProductCart(copyProductCart)
            
         }
