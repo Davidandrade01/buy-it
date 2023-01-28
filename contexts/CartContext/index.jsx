@@ -7,13 +7,13 @@ export const CartContext=createContext({})
 export default function CartProvider({children}) {
     const[productCart,setProductCart]=useState(getItem('basket') ||[])
 
-    function addToCart (id){
+    function addToCart (obj){
         const copyProductCart=[...productCart]
 
-        const BasketArr=copyProductCart.find((product)=>product.id === id)
+        const BasketArr=copyProductCart.find((product)=>product.obj === obj)
         
         if(!BasketArr){
-            copyProductCart.push({id,qtd:1})
+            copyProductCart.push({obj,qtd:1})
             
             
 
@@ -29,9 +29,9 @@ export default function CartProvider({children}) {
         
     }
 
-    function removeCart(id){
+    function removeCart(obj){
         const copyProductCart=[...productCart]
-        const BasketArr=copyProductCart.find((product)=>product.id ===id)
+        const BasketArr=copyProductCart.find((product)=>product.obj ===obj)
 
         if(BasketArr && BasketArr.qtd>=1){
             BasketArr.qtd=BasketArr.qtd-1
@@ -39,7 +39,7 @@ export default function CartProvider({children}) {
            
         }
         else{
-            const arrayfiltered=copyProductCart.filter((product)=>product.id !== id)
+            const arrayfiltered=copyProductCart.filter((product)=>product.obj !== obj)
             setProductCart(arrayfiltered)
             
             
