@@ -1,23 +1,25 @@
-
-
-
+import { useContext } from "react";
+import { CartContext } from "../Contexts/cartContext";
 
 export default function CartPage() {
- 
-  if (typeof window === "undefined") return null;
- const resgatar= (localStorage.getItem('basket ')|| [])
- console.log(resgatar+ 'teste')
+  //Usamos o Contexto para consumir no Carrinho
+	const { clearCart, productCart } = useContext(CartContext);
 
-  return (
-    <div>
-    
+  //const contextCarrinho = useContext(CartContext);
+  // Para usar os dados ou funções -> contextCarrinho.productCart
 
-      {resgatar}
-     
-    </div>
-  ) 
+	return (
+		<div>
+			<h1 style={{ color: "#fff" }}>Funciona</h1>
+			{productCart.map((produto) => {
+				return (
+					<div>
+						<h5>{produto.obj.title}</h5>
+						<h6>{produto.obj.price}</h6>
+					</div>
+				);
+			})}
+      <button onClick={() => clearCart()}>Clear Cart</button>
+		</div>
+	);
 }
-
-
-
-

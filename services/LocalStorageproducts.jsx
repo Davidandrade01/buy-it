@@ -4,10 +4,8 @@ export const setItem=(key, value)=>{
 }
 
 export const getItem=(key)=>{
-
-    if (typeof window === "undefined") return null;
-    
+    if (typeof window === "undefined") return null
     else{
-        return JSON.parse( localStorage.getItem(key))   
+        return JSON.parse(localStorage.getItem(key))   
     } 
 }
