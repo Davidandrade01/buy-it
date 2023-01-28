@@ -13,7 +13,7 @@ export default function CartPage() {
 			<h1 style={{ color: "#fff" }}>Funciona</h1>
 			{productCart.map((produto) => {
 				return (
-					<div>
+					<div key={produto.obj}>
 						<h5>{produto.obj.title}</h5>
 						<h6>{produto.obj.price}</h6>
 					</div>
