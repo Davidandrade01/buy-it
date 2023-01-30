@@ -4,9 +4,10 @@ import { CartContext } from '../Contexts/cartContext'
 import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
+import {CiTrash} from 'react-icons/ci'
 
 export default function Cart() {
-	const{productCart}=useContext(CartContext)
+	const{productCart,removeCart }=useContext(CartContext)
   return (
 <div>
       <h1 className='mb-4 text-xl '><b>Shopping Cart</b></h1>
@@ -24,21 +25,29 @@ export default function Cart() {
              <table className='min-w-full'>
              <thead className='border-b'>
              <tr>
-                <th className='px5 text-left'>Item</th>
-                <th className='px5 text-right'>Quantity</th>
-                <th className='px5 text-right'>Price</th>
-                <th className='px5 text-right'>Action</th>
+                <th className='px-5 text-left'>Item</th>
+                <th className='px-5 text-right'>Quantity</th>
+                <th className='px-5 text-right'>Price</th>
+                <th className='px-5 text-right'>Action</th>
              </tr>
              </thead>
             <tbody>
                 {productCart.map((product)=>(<tr key={product.obj.id} className='border-b'>
                     <td> 
                     <Link href={`/product/${product.id}`}   className=' flex items-center'>
-                    <Image src={product.obj.image} width={50} height={50} alt={product.obj.title}></Image>
-                    &nbsp
+                    <Image className='m-12' src={product.obj.image} width={60} height={60} alt={product.obj.title}></Image>
+    
                     {product.obj.title}
+                    </Link>
+                    </td>
 
-                    </Link></td>
+                    <td className='p-6 text-right'>{product.qtd}</td>
+                    <td className='p-6 text-right'>€{product.obj.price}</td>
+                    <td className='p-5 text-center'>
+                        <button onClick={()=>removeCart(product.obj)}> <CiTrash size={20} />  </button>
+                    </td>
+                    
+
                 </tr>))}
             </tbody>
 
