@@ -28,7 +28,7 @@ export default function CartProvider({ children }) {
 		const copyProductCart = [...productCart];
 		const BasketArr = copyProductCart.find((product) => product.obj === obj);
 
-		if (BasketArr && BasketArr.qtd >= 1) {
+		if (BasketArr && BasketArr.qtd > 1) {
 			BasketArr.qtd = BasketArr.qtd - 1;
 			setProductCart(copyProductCart);
 		} else {
