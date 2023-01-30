@@ -7,16 +7,20 @@ import Image from 'next/image'
 import {CiTrash} from 'react-icons/ci'
 
 export default function Cart() {
-	const{productCart,removeCart }=useContext(CartContext)
+	const{productCart,removeCart,clearCart }=useContext(CartContext)
   return (
-<div>
+<div >
       <h1 className='mb-4 text-xl '><b>Shopping Cart</b></h1>
     
     {
         productCart.length==0?
         (
             <div>
-                Cart is empty! <Link h href='/'>Go Shopping</Link>
+                
+                    <img src="/images/images-removebg-preview.png" alt="go Shopping" />
+                    Ups.. Empty Cart! 
+                    <Link href='/'> <b>Let´s find something cool!</b> !</Link>
+                
             </div>
         ):
         (
@@ -28,7 +32,7 @@ export default function Cart() {
                 <th className='px-5 text-left'>Item</th>
                 <th className='px-5 text-right'>Quantity</th>
                 <th className='px-5 text-right'>Price</th>
-                <th className='px-5 text-right'>Action</th>
+                <th className='px-5 text-right'>Remove Item</th>
              </tr>
              </thead>
             <tbody>
@@ -52,7 +56,26 @@ export default function Cart() {
             </tbody>
 
              </table>
+             
              </div>
+             <div className='card p-5'>
+                <ul>
+                    <li>
+                        <div className='m-10 pb-3 text-xl' >
+                                Subtotal
+                                ({productCart.reduce((a,c)=>a+c.qtd,0)})
+                                
+                                :€
+                                {productCart.reduce((a,c)=>a+c.qtd*c.obj.price,0)}
+                        </div>
+                    </li>
+                    <li>
+                        <Link href={'/checkout'}><button className='primary-button w-full'>Check Out</button></Link>
+                    </li>
+                </ul>
+             
+             </div>
+             <button className='secundary-button' onClick={clearCart}>Clear Cart</button>
             </div>
         )
     }

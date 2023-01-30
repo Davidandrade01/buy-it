@@ -3,9 +3,12 @@
 import React from 'react'
 import {AiFillStar} from 'react-icons/ai'
 import Link from 'next/link'
+import { useContext } from 'react'
+import { CartContext } from '../Contexts/cartContext'
 
 
 export default function Cards({product}) {
+  const {productCart, addToCart}=useContext(CartContext)
   return (
     
       <div className='card'>
@@ -34,7 +37,7 @@ export default function Cards({product}) {
 
 <div className='flex justify-between gap-10 items-center m-4'> 
 <span>€{product.price}</span>
-<button className='primary-button' type='button'>Add to cart</button>
+<button className='primary-button' type='button' onClick={() => addToCart(product)}>Add to cart</button>
 </div>
 
 

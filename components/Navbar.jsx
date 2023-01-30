@@ -12,7 +12,7 @@ export default function Navbar() {
 			<header>
 				<nav className="flex h-12 justify-between shadow-md items-center px-4">
 					<Link href="/" className="text-lg font-bold">
-						{" "}
+						
 						Buy it
 					</Link>
 

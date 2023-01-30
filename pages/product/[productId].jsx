@@ -41,8 +41,8 @@ export default function Details({ product }) {
 			<div className="py-2">
 				<button className="secundary-button">
 					<Link href="/">
-						{" "}
-						<IoMdArrowRoundBack /> Products{" "}
+						
+						<IoMdArrowRoundBack /> Products
 					</Link>
 				</button>
 			</div>
@@ -56,13 +56,13 @@ export default function Details({ product }) {
 					<ul>
 						<li>
 							<b>
-								{" "}
+								
 								<h1 className="text-lg text-center ">{product.title}</h1>
 							</b>
 						</li>
 						<li>Category: {product.category}</li>
 						<li>
-							{" "}
+							
 							<AiFillStar />
 							{product.rating.rate} of {product.rating.count} Reviews
 						</li>
@@ -92,9 +92,7 @@ export default function Details({ product }) {
 								<>{product.qtd}</>
 							))}
 						</div>
-						<button className="p-2" onClick={() => addToCart(product)}>
-							Add
-						</button>
+						
 						<button className="p-2" onClick={() => removeCart(product)}>
 							Sub
 						</button>
@@ -102,8 +100,9 @@ export default function Details({ product }) {
 							Clear cart
 						</button>
 
-						<button className="primary-button w-full" type="button">
-							{" "}
+						<button className="primary-button w-full" type="button" 
+						onClick={() => addToCart(product)}>
+							
 							to cart
 						</button>
 					</div>
