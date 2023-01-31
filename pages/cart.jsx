@@ -5,6 +5,8 @@ import Link from 'next/link'
 import React from 'react'
 import Image from 'next/image'
 import {CiTrash} from 'react-icons/ci'
+import { useRouter } from 'next/router'
+
 
 export default function Cart() {
 	const{productCart,removeCart,clearCart }=useContext(CartContext)
@@ -70,7 +72,7 @@ export default function Cart() {
                         </div>
                     </li>
                     <li>
-                        <Link href={'/checkout'}><button className='primary-button w-full'>Check Out</button></Link>
+                       <button className='primary-button'> Checkout</button>
                     </li>
                 </ul>
              
