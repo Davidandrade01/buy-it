@@ -1,11 +1,17 @@
 import React, { useContext } from "react";
 import Link from "next/link";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { BsPersonFill } from "react-icons/bs";
+import { BsPerson,BsPersonCheckFill } from "react-icons/bs";
+import{FiLogOut} from "react-icons/fi";
 import { CartContext } from "../Contexts/cartContext";
+import { useAuthentication } from "../hooks/useAuthentication";
+import { useAuthValue } from "../contexts/AuthContext";
+
+
 
 export default function Navbar() {
 	const { productCart } = useContext(CartContext);
+	const {user}=useAuthValue()
 
 	return (
 		<div>
@@ -17,13 +23,23 @@ export default function Navbar() {
 					</Link>
 
 					<div className="flex justify-between">
-						<Link className="p-2" href="/login">
-							<BsPersonFill />
-						</Link>
 
+					{!user &&(
+						<><Link className="p-2" href="/login">
+							<BsPerson />
+						</Link></>
+					)}
+					{user &&(
+						<><Link className="p-2" href="/login">
+						<BsPersonCheckFill/>
+						</Link></>
+					)}
+						
+				
 						<Link className="p-2" href="/cart">
 							<AiOutlineShoppingCart />
 						</Link>
+
 
             <div
 								style={{
@@ -36,6 +52,12 @@ export default function Navbar() {
 							>
 								{productCart.length}
 							</div>
+
+							{user &&(
+						<><Link className="p-2" href="/">
+						<FiLogOut/>
+						</Link></>
+					)}
 					</div>
 				</nav>
 			</header>
