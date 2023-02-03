@@ -3,7 +3,7 @@ import { useAuthentication } from '../hooks/useAuthentication'
 
 export default function Register() {
 
-      const[displayName, setdisplayName]=useState("")
+      const[displayName, setDisplayName]=useState("")
       const[email, setEmail]=useState("")
       const[password, setPassword]=useState("")
       const[confirmPassword, setConfirmPassword]=useState("")
@@ -30,8 +30,11 @@ export default function Register() {
 
       console.log(res)
   }
-  useEffect((authError)=>{
-      setError(authError)
+  useEffect(()=>{
+      if(authError){
+setError(authError)
+      }
+      
   },[authError])
 
   return (
@@ -44,7 +47,7 @@ export default function Register() {
  <div class="relative z-0 w-full mb-6 group">
       <input type="displayName" id="displayName" class="floating-input peer" placeholder=" " 
        value={displayName}
-       onChange={(e)=>setdisplayName(e.target.value)}     
+       onChange={(e)=>setDisplayName(e.target.value)}     
       />
       
       <label for="Name" className="floating-label">Name</label>
@@ -80,12 +83,12 @@ export default function Register() {
 </div>
 
   <div className="mb-4 ">
-        <button  type='submit' className='primary-button'>Login</button> 
+        <button  type='submit' className='primary-button'>Register</button> 
 
-        {authError && <p class='text-red-500'>{authError}</p>} 
+      
           
   </div>
-
+{error && <p class='text-red-500'>{error}</p>} 
 
   
   

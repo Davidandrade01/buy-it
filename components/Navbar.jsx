@@ -12,6 +12,8 @@ import { useAuthValue } from "../contexts/AuthContext";
 export default function Navbar() {
 	const { productCart } = useContext(CartContext);
 	const {user}=useAuthValue()
+	const {logout}=useAuthentication()
+
 
 	return (
 		<div>
@@ -53,11 +55,7 @@ export default function Navbar() {
 								{productCart.length}
 							</div>
 
-							{user &&(
-						<><Link className="p-2" href="/">
-						<FiLogOut/>
-						</Link></>
-					)}
+							{user &&(<button onClick={logout} ><FiLogOut/></button>)}
 					</div>
 				</nav>
 			</header>
