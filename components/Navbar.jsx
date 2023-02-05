@@ -1,18 +1,18 @@
 import React, { useContext } from "react";
 import Link from "next/link";
 import { AiOutlineShoppingCart } from "react-icons/ai";
-import { BsPerson,BsPersonCheckFill } from "react-icons/bs";
-import{FiLogOut} from "react-icons/fi";
+import { BsPerson,} from "react-icons/bs";
 import { CartContext } from "../Contexts/cartContext";
-import { useAuthentication } from "../hooks/useAuthentication";
 import { useAuthValue } from "../contexts/AuthContext";
+import Dropdprofile from "./dropdprofile";
+
 
 
 
 export default function Navbar() {
 	const { productCart } = useContext(CartContext);
 	const {user}=useAuthValue()
-	const {logout}=useAuthentication()
+	
 
 
 	return (
@@ -32,12 +32,10 @@ export default function Navbar() {
 						</Link></>
 					)}
 					{user &&(
-						<><Link className="p-2" href="/login">
-						<BsPersonCheckFill/>
-						</Link></>
+						<Dropdprofile/>
 					)}
-						
-				
+		
+			
 						<Link className="p-2" href="/cart">
 							<AiOutlineShoppingCart />
 						</Link>
@@ -55,7 +53,7 @@ export default function Navbar() {
 								{productCart.length}
 							</div>
 
-							{user &&(<button onClick={logout} ><FiLogOut/></button>)}
+							
 					</div>
 				</nav>
 			</header>
