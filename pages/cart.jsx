@@ -72,7 +72,7 @@ export default function Cart() {
                         </div>
                     </li>
                     <li>
-                       <button className='primary-button'> Checkout</button>
+                       <Link href='/checkout'><button className='primary-button'> Checkout</button></Link>
                     </li>
                 </ul>
              
