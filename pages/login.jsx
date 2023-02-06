@@ -49,7 +49,7 @@ useEffect(()=>{
       value={email} onChange={(e)=>setEmail(e.target.value)} />   
       <label for="email" className="floating-label">
       
-      Email address</label>
+      Email address *</label>
 </div>
 
 <div class="relative z-0 mb-6 group">
@@ -57,7 +57,7 @@ useEffect(()=>{
       value={password} onChange={(e)=>setPassword(e.target.value)} />
     
       <label for="password" className="floating-label">
-      Password
+      Password *
       
       </label>
 </div>

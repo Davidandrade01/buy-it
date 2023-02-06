@@ -60,7 +60,7 @@ setError(authError)
             
       />
       
-      <label for="email" className="floating-label">Email address</label>
+      <label for="email" className="floating-label">Email address *</label>
 </div>
 
 <div class="relative z-0 mb-6 group">
@@ -70,7 +70,7 @@ setError(authError)
        onChange={(e)=>setPassword(e.target.value)} 
           
       />
-       <label for="password" className="floating-label" > Password</label>
+       <label for="password" className="floating-label" > Password *</label>
 </div>
 
 <div class="relative z-0 mb-6 group">
@@ -79,7 +79,7 @@ setError(authError)
       value={confirmPassword}
        onChange={(e)=>setConfirmPassword(e.target.value)}   
       />
-       <label for="Confirm Password" className="floating-label"> Confirm Password</label>
+       <label for="Confirm Password" className="floating-label"> Confirm Password *</label>
 </div>
 
   <div className="mb-4 ">
