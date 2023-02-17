@@ -5,10 +5,20 @@ import { AuthProvider } from "../contexts/AuthContext";
 import { onAuthStateChanged } from "firebase/auth";
 import { useEffect,useState } from "react";
 import { useAuthentication } from "../hooks/useAuthentication";
+import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 
 
+
+
+const ititialOptions={
+	"client-id": "AaoSCyZwPo7xJ1s9L4hc8kZtIV6wIwktCrkQlz2nuXp6tkWYenjiLoSW8WGBexxo2_IyrddABaqhO7g0",
+	currency:"EUR",
+	intent:"capture",
+
+}
 
 function MyApp({ Component, pageProps }) {
+
 	const [user,setUser]=useState(undefined)
 	const {auth}=useAuthentication()	
 	const loadingUser=user===undefined
@@ -25,11 +35,17 @@ function MyApp({ Component, pageProps }) {
 
 	return (
 		<AuthProvider value={{user}}>
-		<CartProvider>
+		
+		<CartProvider >
+		<PayPalScriptProvider options={ititialOptions}>
+		
 			<Layout>
 				<Component {...pageProps} />
 			</Layout>
-		</CartProvider>
+		
+			</PayPalScriptProvider>
+			</CartProvider>
+		
 		</AuthProvider>
 	);
 }

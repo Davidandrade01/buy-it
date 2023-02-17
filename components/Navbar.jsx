@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import Link from "next/link";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { BsPerson,} from "react-icons/bs";

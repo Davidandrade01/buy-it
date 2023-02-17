@@ -2,6 +2,7 @@ import React from 'react'
 import Link from 'next/link'
 import { useState,useEffect } from 'react'
 import { useAuthentication } from '../hooks/useAuthentication'
+import { router } from 'next/router'
 
 
 
@@ -29,6 +30,8 @@ const handleSubmit= async(e)=>{
   const res=await login(user)
 
   console.log(res)
+
+  router.push('/')
 }
 useEffect(()=>{
   console.log(authError)

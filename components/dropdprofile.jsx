@@ -38,9 +38,10 @@ export default function Dropdprofile() {
      </Link>
     </Menu.Item>
 
-    <Menu.Item className='headless-item'>
-     <Link href='/cart'>
-    <FiLogOut onClick={logout}/> Logout
+    <Menu.Item  className='headless-item'>
+     
+    <Link href='#' onClick={logout}>
+     <FiLogOut  />Logout
      </Link>
     </Menu.Item>
 

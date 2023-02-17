@@ -9,7 +9,8 @@ import { useRouter } from 'next/router'
 
 
 export default function Cart() {
-	const{productCart,removeCart,clearCart }=useContext(CartContext)
+	const{productCart,removeCart,clearCart,Amount,individualqtd}=useContext(CartContext)
+  
   return (
 <div >
       <h1 className='mb-4 text-xl '><b>Shopping Cart</b></h1>
@@ -65,10 +66,10 @@ export default function Cart() {
                     <li>
                         <div className='m-10 pb-3 text-xl' >
                                 Subtotal
-                                ({productCart.reduce((a,c)=>a+c.qtd,0)})
+                                ({individualqtd})
                                 
                                 :€
-                                {productCart.reduce((a,c)=>a+c.qtd*c.obj.price,0)}
+                               {Amount}
                         </div>
                     </li>
                     <li>
@@ -78,9 +79,17 @@ export default function Cart() {
              
              </div>
              <button className='secundary-button' onClick={clearCart}>Clear Cart</button>
+
+             
+    
+        
+
             </div>
+            
+
         )
     }
+    
     </div>
   )
 }

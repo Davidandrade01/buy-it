@@ -1,17 +1,24 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 
 import React from 'react'
 import CheckoutWizard from '../components/shipping'
 import { useForm } from 'react-hook-form'
+import { useRouter } from 'next/router'
+import { CartContext } from '../Contexts/cartContext'
+import { useContext } from 'react'
+
+
+
 
 
 export default function ShippingScreen  () {
   const {register,setFocus,handleSubmit,setValue}=useForm()
+  const router=useRouter()
+  const{Amount}=useContext(CartContext)
 
-  
   const onSubmit=(e)=>{
-    console.log(e)
+    router.push('/payment')
   }
-  
   
     const onblurzip=async (e)=>{
       e.preventDefault()
@@ -27,19 +34,17 @@ export default function ShippingScreen  () {
        setValue("district",data[0].Distrito)
        setFocus("number")
       
-       
-      
     })  
   }
   
   return (
     <>
-    
+      
       <CheckoutWizard activeStep={1}/>
       <form onSubmit={handleSubmit(onSubmit)} className="mx-auto max-w-screen-md"  >
       
  <h1 className="mb-4 text-xl"><b>Shipping</b></h1>
-
+   
  <label className='m-80'><input type="checkbox"  /> Use my adress</label>
 
 <div className="relative z-0 w-full mb-6 group">
@@ -124,9 +129,13 @@ export default function ShippingScreen  () {
        Country *</label>
   </div>
 </div>
+  
   <button  type='submit' className=' mt-08 w-3/4 primary-button'>Next</button> 
+  
+
 </form>
-    
+
+
     
     </>
   )
