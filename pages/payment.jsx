@@ -3,11 +3,14 @@ import CheckoutWizard from '../components/shipping'
 import { PayPalButtons } from '@paypal/react-paypal-js'
 import { router } from 'next/router'
 import { CartContext } from '../Contexts/cartContext'
+import { useAuthValue } from "../contexts/AuthContext";
+
 
 
 export default function Payment() {
 
   const {Amount,clearCart}=useContext(CartContext)
+  const {user}=useAuthValue()
  
   console.log(Amount)
   return (
@@ -25,8 +28,9 @@ export default function Payment() {
           })
         }}
         onApprove={(data,actions)=>{
+          
           return actions.order.capture().then(function(datails){
-            alert("aproved"+ datails.payer.name.given_name)
+            alert("aproved"+ datails.payer.name.user.displayName)
             clearCart()
             router.push('/thanks')
           })

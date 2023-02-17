@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useAuthentication } from '../hooks/useAuthentication'
+import{FiEye,FiEyeOff} from 'react-icons/fi'
 
 export default function Register() {
 
@@ -8,10 +9,14 @@ export default function Register() {
       const[password, setPassword]=useState("")
       const[confirmPassword, setConfirmPassword]=useState("")
       const [error, setError]=useState("")
+      const[hidepass,setHidepass]=useState(false)
 
       const{createUser,error:authError,loading}=useAuthentication()
       
-
+ const showpass=()=>{
+      setHidepass(prevState=>!prevState)
+      
+ }
   const handleSubmit= async(e)=>{
       e.preventDefault()
       setError("")
@@ -47,9 +52,10 @@ setError(authError)
  <div class="relative z-0 w-full mb-6 group">
       <input type="displayName" id="displayName" class="floating-input peer" placeholder=" " 
        value={displayName}
-       onChange={(e)=>setDisplayName(e.target.value)}     
+       onChange={(e)=>setDisplayName(e.target.value)}  
+        
       />
-      
+        
       <label for="Name" className="floating-label">Name</label>
 </div>
 
@@ -64,22 +70,34 @@ setError(authError)
 </div>
 
 <div class="relative z-0 mb-6 group">
-      <input type="password " name="password" id="password" class="floating-input peer" 
-      placeholder=" " 
+      <input type={hidepass ?"text":"password"}  name="password" id="password" class="floating-input peer" 
+      placeholder="  " 
       value={password}
        onChange={(e)=>setPassword(e.target.value)} 
           
       />
-       <label for="password" className="floating-label" > Password *</label>
+       <label for="password" className="floating-label" > Password * </label>
+       <button onClick={showpass}>
+       {
+            hidepass ? <FiEye/>  : <FiEyeOff/>
+       }
+       </button>
 </div>
 
 <div class="relative z-0 mb-6 group">
-      <input type="password " name="confirm Password" id="confirm Passwordassword" class="floating-input peer" 
+      <input type={hidepass ? "text": "password"} name="confirm Password" id="confirm Passwordassword" class="floating-input peer" 
       placeholder=" " 
       value={confirmPassword}
        onChange={(e)=>setConfirmPassword(e.target.value)}   
       />
        <label for="Confirm Password" className="floating-label"> Confirm Password *</label>
+       <button onClick={showpass}>
+       
+       {
+           hidepass ? <FiEye/>: <FiEyeOff/> 
+       }
+      
+       </button>
 </div>
 
   <div className="mb-4 ">

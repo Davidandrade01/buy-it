@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useState,useEffect } from 'react'
 import { useAuthentication } from '../hooks/useAuthentication'
 import { router } from 'next/router'
+import{FiEye,FiEyeOff} from 'react-icons/fi'
 
 
 
@@ -14,7 +15,11 @@ export default function Login() {
   const [error, setError]=useState("")
 
   const{login,error:authError,loading}=useAuthentication()
+  const[hidepass,setHidePass]=useState(false)
   
+  const showpass=()=>{
+    setHidePass(prevState=>!prevState)
+  }
 
 const handleSubmit= async(e)=>{
   e.preventDefault()
@@ -56,13 +61,18 @@ useEffect(()=>{
 </div>
 
 <div class="relative z-0 mb-6 group">
-      <input type="password " name="password" id="password" class="floating-input peer" placeholder=" "
-      value={password} onChange={(e)=>setPassword(e.target.value)} />
+      <input type={hidepass ? "text":"password"} name="password" id="password" class="floating-input peer" placeholder=" "
+      value={password} onChange={(e)=>setPassword(e.target.value)}   />
     
       <label for="password" className="floating-label">
       Password *
       
       </label>
+      <button onClick={showpass}>
+       {
+            hidepass ? <FiEye/>  : <FiEyeOff/>
+       }
+       </button>
 </div>
 
   <div className="mb-4 ">
