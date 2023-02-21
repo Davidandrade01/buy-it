@@ -7,16 +7,16 @@ export default function DpdSales() {
   return (
     <Menu as='div' className="relative inline-block">
     <Menu.Button className='flex items-center'>
-        <span className='m-2  text-red-600 '>SALES</span>
+        <span className='m-2  text-red-600 '><b>SALES</b></span>
         <IoIosArrowDown className=' text-red-600'/>
     </Menu.Button>
 
     <Menu.Items className='headless-items-container '>
         <Menu.Item className='headless-item'>
-            <p>Lighting</p>
+        <p>Lighting</p>
         </Menu.Item>
         <Menu.Item className='headless-item'>
-        <p>Home Decoration</p>
+        <p>Decoration</p>
         </Menu.Item>
         <Menu.Item className='headless-item'>
         <p> Fragrances</p>

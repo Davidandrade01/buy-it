@@ -8,7 +8,7 @@ export default function DropdWomen() {
     
     <Menu as='div' className="relative inline-block">
     <Menu.Button className='flex items-center'>
-        <span className='m-2'>WOMAN</span>
+        <span className='m-2'><b>WOMAN</b></span>
         <IoIosArrowDown/>
     </Menu.Button>
 

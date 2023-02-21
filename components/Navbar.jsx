@@ -31,13 +31,15 @@ export default function Navbar() {
 						
 					</Link>
 
-					<div className="flex-col">
-						<div className="flex mb-2 items-center">
+					<div className="flex-col items-center ">
+						<div className="flex mb-3 p-2 place-content-center items-center mt-0 border-b border-black ">
 							<input className="w-64 ml-8" type="text" placeholder="Hi, what are you looking for today?"   />
 							<BsSearch/>
 						</div>
-						<div className="w-96 border-b-2 mb-4 border-black"></div>
-						<div className="flex gap-10">
+
+						
+						
+						<div className="flex gap-20">
 							<Dropdtech/>
 							<Dropdcollections/>
 							<Dropdman/>
