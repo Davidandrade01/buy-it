@@ -19,7 +19,7 @@ export default function Cards({product}) {
 
 
 <Link href={`/product/${product.id}`}>
-  <img className='h-80 w-80 m-4 ' src={product.image} alt={product.title}  />
+  <img className='h-80 w-80 m-4 ' src={product.thumbnail} alt={product.title}  />
   
   <div className=' overflow-hidden  h-20'>
   <p className='text-center text-xs m-4'>{product.category}</p>

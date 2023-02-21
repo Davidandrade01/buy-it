@@ -6,12 +6,12 @@ import { IoMdArrowRoundBack } from "react-icons/io";
 import { CartContext } from "../../Contexts/cartContext";
 import { useContext } from "react";
 import { V4 as uuid } from "uuid";
-
+import Image from "next/image";
 export async function getStaticProps(context) {
-	const Api = "https://fakestoreapi.com/products";
+
 	const { params } = context;
 	const data = await fetch(
-		`https://fakestoreapi.com/products/${params.productId}`
+		`https://dummyjson.com/products/${params.productId}`
 	);
 	const product = await data.json();
 	return {
@@ -20,10 +20,11 @@ export async function getStaticProps(context) {
 }
 
 export async function getStaticPaths() {
-	const res = await fetch("https://fakestoreapi.com/products");
+	const res = await fetch("https://dummyjson.com/products/");
 	const data = await res.json();
-	const paths = data.map((product) => {
+	const paths = data.products.map((product) => {
 		return { params: { productId: `${product.id}` } };
+		
 	});
 	return { paths, fallback: false };
 }
@@ -49,7 +50,13 @@ export default function Details({ product }) {
 
 			<div className="grid md:grid-cols-4 md:gap-3  ">
 				<div className="md:col-span-2">
-					<img src={product.image} alt={product.title} Layout="responsive" />
+				<Image className='m-12' src={product.thumbnail} width={400} height={400} alt={product.title}></Image>
+				<div className="flex">
+					<Image className='m-12' src={product.images[0]} width={100} height={100} alt={product.title}></Image>
+					<Image className='m-12' src={product.images[1]} width={100} height={100} alt={product.title}></Image>
+					<Image className='m-12' src={product.images[2]} width={100} height={100} alt={product.title}></Image>
+				</div>	
+					
 				</div>
 
 				<div>
@@ -60,11 +67,11 @@ export default function Details({ product }) {
 								<h1 className="text-lg text-center ">{product.title}</h1>
 							</b>
 						</li>
-						<li>Category: {product.category}</li>
+						<li>Category:{product.category}</li>
 						<li>
 							
 							<AiFillStar />
-							{product.rating.rate} of {product.rating.count} Reviews
+							{product.rating} o Reviews
 						</li>
 						<li>Descriptions: {product.description}</li>
 					</ul>

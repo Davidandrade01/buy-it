@@ -1,12 +1,12 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
 
-import React from 'react'
+import React, { useState } from 'react'
 import CheckoutWizard from '../components/shipping'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
 import { CartContext } from '../Contexts/cartContext'
 import { useContext } from 'react'
-
+import { setItem,getItem } from '../services/LocalStorageproducts'
 
 
 
@@ -16,8 +16,15 @@ export default function ShippingScreen  () {
   const router=useRouter()
   const{Amount}=useContext(CartContext)
 
+
+
+
+  
+
   const onSubmit=(e)=>{
     router.push('/payment')
+    
+
   }
   
     const onblurzip=async (e)=>{
@@ -26,7 +33,8 @@ export default function ShippingScreen  () {
       const apiId=  "ptapi63e0e78054fb56.05582833"
       const res = await fetch(` https://api.duminio.com/ptcp/v2/${apiId}/${zip}`)
       .then(  res => res.json()).then( data => {
-       //console.log(data)
+      
+       
        
        setValue('Street', data[0].Morada);
        setValue("city",data[0].Concelho)
@@ -35,6 +43,8 @@ export default function ShippingScreen  () {
        setFocus("number")
       
     })  
+ 
+    
   }
   
   return (
@@ -49,7 +59,7 @@ export default function ShippingScreen  () {
 
 <div className="relative z-0 w-full mb-6 group">
       <input type="text" id="fullname" className="floating-input peer" placeholder=" " required 
-       />   
+      />   
       <label htmlFor="fullname" className="floating-label">
       
       Full Name *</label>
@@ -58,6 +68,7 @@ export default function ShippingScreen  () {
   <div className="relative z-0 w-full mb-6 group">
         <input onBlur={onblurzip}  type="text" id="Zipcode" className="floating-input peer"
          placeholder=" "  required 
+          
          />
         <label htmlFor="Zip code" className="floating-label">
   
@@ -88,7 +99,7 @@ export default function ShippingScreen  () {
       <label htmlFor="complemento" className="floating-label">
       
      Complement</label>
-</div>
+</div>  
 
 <div className='flex justify-between'>
   <div className="relative z-0 w-full mb-6 group">
@@ -112,8 +123,8 @@ export default function ShippingScreen  () {
 
 <div className='flex justify-between'>
   <div className="relative z-0 w-full mb-6 group">
-        <input {...register("district")} type="text" id="county" className="floating-input peer" 
-        placeholder=" " required 
+        <input {...register("district")} type="text" id="district" className="floating-input peer" 
+        placeholder=" " required  
          />
         <label htmlFor="district " className="floating-label">
   
@@ -122,10 +133,11 @@ export default function ShippingScreen  () {
   
   <div className="relative z-0 w-full mb-6 group">
         <input   type="text" id="country" className="floating-input peer"
-         placeholder=" " required 
-         />
+         placeholder=" " required  
+        
+        />
         <label htmlFor="country" className="floating-label">
-  
+        
        Country *</label>
   </div>
 </div>

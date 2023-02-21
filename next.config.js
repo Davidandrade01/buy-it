@@ -3,9 +3,10 @@ module.exports = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'fakestoreapi.com',
+        hostname: 'i.dummyjson.com',
         
       },
     ],
   },
 }
+

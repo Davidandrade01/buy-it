@@ -42,7 +42,7 @@ export default function Cart() {
                 {productCart.map((product)=>(<tr key={product.obj.id} className='border-b'>
                     <td> 
                     <Link href={`/product/${product.id}`}   className=' flex items-center'>
-                    <Image className='m-12' src={product.obj.image} width={60} height={60} alt={product.obj.title}></Image>
+                    <Image className='m-12' src={product.obj.thumbnail} width={200} height={200} alt={product.obj.title}></Image>
     
                     {product.obj.title}
                     </Link>

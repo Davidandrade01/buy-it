@@ -16,9 +16,9 @@ export default function Navbar() {
 
 
 	return (
-		<div>
-			<header>
-				<nav className="flex h-12 justify-between shadow-md items-center px-4">
+		<div className="relative">
+			<header className="fixed top-0 left-0 right-0 bg-white">
+				<nav className="flex h-12 justify-between shadow-md items-center px-4 ">
 					<Link href="/" className="text-lg font-bold">
 						
 						Buy it
