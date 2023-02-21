@@ -69,8 +69,8 @@ a {
 
 .headless-items-container{
   @apply 
-  absolute right-0 w-56  origin-top-right shadow-lg
-  bg-white rounded-2xl gap-2
+  absolute right-0 w-72  shadow-lg
+  bg-white rounded-2xl gap-2 p-3
 
  
 }
@@ -79,3 +79,4 @@ a {
 flex justify-between text-center hover:bg-blue-400  active:bg-blue-700
 hover:text-white
 }
+

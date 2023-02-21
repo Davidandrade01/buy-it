@@ -5,7 +5,7 @@ export async function getStaticProps() {
 	const Api = "https://dummyjson.com/products?limit=100";
 	const res = await fetch(`${Api}`);
 	const productList = await res.json();
-	console.log(productList)
+	//console.log(productList)
 
 	return {
 		props: {
