@@ -7,7 +7,7 @@ export default function DpdSales() {
   return (
     <Menu as='div' className="relative inline-block">
     <Menu.Button className='flex items-center'>
-        <span className='m-2  text-red-600 '><b>SALES</b></span>
+        <span className='m-2  text-red-600  text-button'><b>SALES</b></span>
         <IoIosArrowDown className=' text-red-600'/>
     </Menu.Button>
 

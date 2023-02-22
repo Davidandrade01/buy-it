@@ -7,7 +7,7 @@ export default function Dropdcollections() {
   return (
     <Menu as='div' className="relative inline-block">
     <Menu.Button className='flex items-center'>
-        <span className='m-2'><b>COLLECTIONS</b> </span>
+        <span className='m-2 text-button'><b>COLLECTIONS</b> </span>
         <IoIosArrowDown/>
     </Menu.Button>
 
