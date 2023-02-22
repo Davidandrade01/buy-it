@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'next/link';
 import { Menu } from "@headlessui/react";
-import {BsPersonCheckFill } from "react-icons/bs";
-import {MdFavorite} from "react-icons/md";
+import {BsPersonCheckFill,BsPerson  } from "react-icons/bs";
+import {MdOutlineFavoriteBorder} from "react-icons/md";
 import{FiLogOut,FiSettings} from "react-icons/fi";
 import{IoIosArrowDown}from "react-icons/io";
 import {CiShoppingTag} from "react-icons/ci";
@@ -14,15 +14,15 @@ export default function Dropdprofile() {
     const {user}=useAuthValue()
   return (
     <Menu as="div" className="relative inline-block">
-    <Menu.Button className='headless-menu-button'>
-         <BsPersonCheckFill/>
+    <Menu.Button className='mt-0 flex items-center text-button gap-1'>
+         <BsPerson  />
         Hi, {user.displayName} <IoIosArrowDown/>
     </Menu.Button>
     <Menu.Items className='headless-items-container'>
 
     <Menu.Item className='headless-item'>
      <Link href='/cart'>
-     <FiSettings/> Setting Account
+     <FiSettings/> Account
      </Link>
     </Menu.Item>
 
@@ -34,14 +34,14 @@ export default function Dropdprofile() {
 
     <Menu.Item className='headless-item'>
      <Link href='/cart'>
-     <MdFavorite/> Favorites
+     <MdOutlineFavoriteBorder/> Favorites
      </Link>
     </Menu.Item>
 
     <Menu.Item  className='headless-item'>
      
     <Link href='#' onClick={logout}>
-     <FiLogOut  />Logout
+     <FiLogOut />Logout
      </Link>
     </Menu.Item>
 
