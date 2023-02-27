@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 * {
-  padding: 0;
+  padding: 0px;
   margin: 0;
   font-family: Rubik;
 }
@@ -89,4 +89,3 @@ a {
 flex justify-between text-center hover:bg-blue-400  active:bg-blue-700
 hover:text-white
 }
-
