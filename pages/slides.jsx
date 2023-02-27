@@ -4,13 +4,13 @@ import Cards from '../components/Cards';
 
 export  async  function getStaticProps() {
 
-    const api1="https://dummyjson.com/products/1"
+    const api1="https://fakestoreapi.com/products/1"
     const api2="https://fakestoreapi.com/products/3"
     const api3="https://fakestoreapi.com/products/2"
     const api4="https://fakestoreapi.com/products/17"
     const api5="https://fakestoreapi.com/products/4"
     const api6="https://fakestoreapi.com/products/15"
- 
+    
 
     const res1= await fetch(`${api1}`)
     const item1= await res1.json()
@@ -44,11 +44,11 @@ export  async  function getStaticProps() {
         
     return (
 
-        <div className="carousel-wrapper  " centerMode={true}>
-        <Carousel  centerMode={true} centerSlidePercentage={30}>
-            <div    >
+        <div className="carousel-wrapper   grid      lg:grid-cols-1 gap-4   " >
+        <Carousel  centerMode={true} centerSlidePercentage={30} autoPlay swipeable infiniteLoop interval={2500}>
+            <div  >
 
-                {<Cards product={item1}/>}
+                {<Cards product={item1} className='text-left'/>}
             
             </div>
            
@@ -59,17 +59,22 @@ export  async  function getStaticProps() {
             </div>
              <div>
             
-                {<Cards product={item2}/>}
+                {<Cards product={item3}/>}
             
             </div>
             <div>
             
-            {<Cards product={item2}/>}
+            {<Cards product={item4}/>}
         
         </div>
         <div>
             
-            {<Cards product={item2}/>}
+            {<Cards product={item5}/>}
+        
+        </div>
+        <div>
+            
+            {<Cards product={item6}/>}
         
         </div>
            

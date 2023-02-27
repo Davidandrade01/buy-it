@@ -7,10 +7,14 @@ import { useContext } from 'react'
 import { CartContext } from '../Contexts/cartContext'
 import Image from 'next/image'
 import {MdOutlineFavoriteBorder} from "react-icons/md";
+import { useState } from 'react'
 
 
 export default function Cards({product}) {
-
+const[colorfavorites, setColorFavorites]=useState("btn-favorites")
+  const favoritesfunc=()=>{
+    setColorFavorites("btn-favorites2")
+  }
  
   const {productCart, addToCart}=useContext(CartContext)
   const discount=(((product.discountPercentage)/100) *(product.price)).toFixed(2)
@@ -18,18 +22,19 @@ export default function Cards({product}) {
  
   return (
     
-    <div style={{width:"324px",height:"451px", margin:"28px"}}>
+    <div style={{width:"324px",height:"451px", margin:"12px"}}>
+    <div className='absolute top-2 right-2'><MdOutlineFavoriteBorder size={24}/></div>
       <Link href={`/product/${product.id}`}>
       
         <div style={{width:"324px", height:"301px", border:"1px solid black",}}
         className='flex justify-center items-center mb-2 hover:opacity-80 relative'>
-        <div className='absolute top-2 right-2'><MdOutlineFavoriteBorder size={24}/></div>
-          <Image src={ product.thumbnail || product.image   } height={200} width={200}  alt={product.title} />
+        
+          <Image src={  product.image   } height={200} width={200}  alt={product.title} className="max-w-fit max-h-full " />
         </div>
       </Link>
-      <div>
+      <div className='text-left'>
           <p style={{fontSize:"12px", marginBotton:"8px"}}>{product.category}</p>
-          <p style={{fontSize:"16px", marginBotton:"8px"}}>{product.title}</p>
+          <p style={{fontSize:"16px", marginBotton:"8px"}} className='limit-ch'>{product.title}</p>
           
           {product.discountPercentage > 0  &&
           <div>
@@ -44,14 +49,14 @@ export default function Cards({product}) {
 
           {! product.discountPercentage &&
           
-            <p style={{color:"#9B9A9A",fontSize:"12px", marginBotton:"8px"}}>{product.price}</p>
+            <p style={{color:"#9B9A9A",fontSize:"12px", marginBotton:"8px"}}> € {product.price}</p>
           
           }
           
           
       </div>
-      <button style={{border:"1px solid black", marginTop:"8px"}}
-         className='text-button py-2 px-4  hover:bg-black hover:text-white' >
+      <button  style={{border:"1px solid black", marginTop:"8px"}}
+         className='text-button py-2 px-4  hover:bg-black hover:text-white flex flex-initial' >
             <b>ADD TO CART</b>  
         </button>
     </div>

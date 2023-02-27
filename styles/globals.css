@@ -89,3 +89,16 @@ a {
 flex justify-between text-center hover:bg-blue-400  active:bg-blue-700
 hover:text-white
 }
+
+.btn-favorites{
+  background-color: white;
+  }
+  .btn-favorites2{
+    background-color: red;
+  }
+
+.limit-ch{
+  @apply
+  truncate
+
+}
