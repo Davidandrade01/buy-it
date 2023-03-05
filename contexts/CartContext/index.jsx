@@ -6,7 +6,7 @@ export const CartContext = createContext({});
 
 export default function CartProvider({ children }) {
 	const [productCart, setProductCart] = useState(getItem("basket") || []);
-	const Amount= productCart.reduce((a,c)=>a+c.qtd*c.obj.price,0)
+	const Amount= productCart.reduce((a,c)=>a+c.qtd*c.obj.price,0).toFixed(2)
 	const individualqtd=productCart.reduce((a,c)=>a+c.qtd,0)
 	
 	function addToCart(obj) {

@@ -5,7 +5,10 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {transitionDuration: {
+      '0': '0ms',
+      '2000': '2000ms',
+    }},
     fontFamily:{
       Rubik:["Rubik","sans-serif"]
     }

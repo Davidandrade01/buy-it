@@ -20,9 +20,10 @@ export default function Cards({product}) {
   setFavcolor(!favcolor)
  }
 
-  const {productCart, addToCart}=useContext(CartContext)
-  const discount=(((product.discountPercentage)/100) *(product.price)).toFixed(2)
-  const Valuewithdiscount=((product.price)-discount)
+  const {addToCart}=useContext(CartContext)
+
+  var discount=(((product.discountPercentage)/100) *(product.price)).toFixed(2)
+  var Valuewithdiscount=((product.price)-discount)
 
 
  
@@ -38,8 +39,17 @@ export default function Cards({product}) {
       className='absolute top-2 right-2'  
     />
           <Link href={`/product/${product.id}`}>
-          <div style={{width:"300px", height:"300px"}}>
-            <Image src={  product.image   } height={200} width={200}  alt={product.title} className="max-w-fit max-h-full " />
+          <div style={{width:"200px", height:"200px"}}>
+          {product.images &&
+            <Image src={ product.images[1]} height={400} width={400}  
+            alt={product.title} className="max-w-fit max-h-full " />
+          }
+
+          {product.image &&
+            <Image src={ product.image} height={400} width={400}  
+            alt={product.title} className="max-w-fit max-h-full " />
+          }
+            
           </div>
           </Link>
         </div>
@@ -68,9 +78,9 @@ export default function Cards({product}) {
           
           
       </div>
-      <button 
+      <button onClick={()=>addToCart(product)}
          style={{border:"1px solid black", marginTop:"8px"}}
-         className='text-button py-2 px-4  hover:bg-black hover:text-white flex flex-initial' >
+         className='cta-btn' >
             <b>ADD TO CART</b>  
         </button>
     </div>

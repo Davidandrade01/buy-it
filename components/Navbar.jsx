@@ -1,13 +1,13 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
 //ICONS
-import { AiOutlineShoppingCart,AiOutlineMail } from "react-icons/ai";
+import { AiOutlineMail } from "react-icons/ai";
 import { BsPerson,BsSearch,BsTruck} from "react-icons/bs";
 import {MdOutlineFavoriteBorder} from "react-icons/md"
 import {RiPaypalLine} from "react-icons/ri"
-
+import {SlBag}from 'react-icons/sl'
 //Components
 import Dropdprofile from "./dropdprofile";
 import Dropdtech from "./dropdtech";
@@ -15,21 +15,27 @@ import Dropdcollections from "./dropdcollections";
 import Dropdman from "./dropdman";
 import DropdWomen from "./DropdWomen";
 import DpdSales from "./DpdSales";
+import Bag from "./Bag";
 
 //Context and hooks
 import { CartContext } from "../Contexts/cartContext";
 import { useAuthValue } from "../contexts/AuthContext";
 
+
+
 export default function Navbar() {
+
+
 	const { productCart } = useContext(CartContext);
 	const {user}=useAuthValue()
+	const[showbag,setShowbag]=useState(false)
 	
 
 
 return (
-<div className="relative mb-44 ">
-<header className="fixed top-0 left-0 right-0 bg-white">
-<nav className="flex h-32 justify-between shadow-md items-center px-4  ">
+<div className="relative mb-44  " >
+<header className="fixed top-0 left-0 right-0 bg-white  " >
+<nav className="flex h-32 justify-between shadow-md items-center px-4  "  >
 <Link href="/" >
 					
 <img className="my-12"   src="images/logobuyit.png" alt="logo-buyit" />
@@ -54,7 +60,7 @@ return (
 	</div>
 </div>
 					
-					<div className=" mb-4  flex justify-between items-center gap-4">
+					<div  className=" mb-4  flex justify-between items-center gap-4">
 
 					{!user &&(
 						<><Link className="p-2" href="/login">
@@ -62,17 +68,21 @@ return (
 						</Link></>
 					)}
 					{user &&(
-						<Dropdprofile/>
+						<Dropdprofile />
 					)}
 					<Link className=" text-button flex items-center" href="/cart"><MdOutlineFavoriteBorder  /> 
 						Favorites</Link>
 			
-						<Link className="p-2 flex items-center" href="/cart">
-							<AiOutlineShoppingCart />
+						<div className="p-2 flex items-center" >
+
+							<button onClick={()=>setShowbag(true)}  >
+								<SlBag/>
+							</button> 
+							
 							<div className="bg-black text-xs text-white w-4 h-4 rounded-full text-center mb-4 " >
 							{productCart.length}
 							</div>
-						</Link>
+						</div>
 
 					</div>
 					
@@ -91,6 +101,11 @@ return (
 					
 					</div>
 			</header>
+			<div>
+				<Bag open={showbag} close={()=>setShowbag(false)} />
+			</div>
+			
 		</div>
+		
 	);
 }
