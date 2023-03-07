@@ -24,18 +24,18 @@ export default function Bag({open,close}) {
   return (
     <>
     
-      <div onMouseLeave={close} style={{border:"1px solid black" , zIndex:"1000",right:"0", top:"-50px" , width:"400px", animation:"infinite 2s" }} 
+      <div onMouseLeave={close} style={{border:"1px solid black" , zIndex:"1000",right:"0", top:"-50px" , width:"400px",  }} 
       className='bag-container  '>
         
 
         {
         productCart.length==0?
         (
-            <div>
+            <div className='flex  flex-col items-center'>
                 
-                    <Image src="/images/kelly-sikkema-1Pgq9ZpIatI-unsplash.jpg" width={200} height={200} alt="go Shopping" />
+                    <Image src="/images/Empty bag.png" width={200} height={200} alt="go Shopping" />
                     Ups.. Empty Cart! 
-                    <Link href='/'> <b>Let´s find something cool!</b> !</Link>
+                    <Link href='/'> <b>Let´s find something cool !</b> </Link>
                    
             </div>
         ):

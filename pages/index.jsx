@@ -174,7 +174,7 @@ export default function Inicial({item1,item2,item3,
     <p>This week’s <b>highlights</b></p>
    </div>
    <div className="carousel-wrapper   grid  lg:grid-cols-1 gap-4 " >
-        <Carousel  centerMode={true} centerSlidePercentage={30} autoPlay swipeable infiniteLoop interval={2500}>
+        <Carousel  centerMode={true} centerSlidePercentage={30} autoPlay swipeable infiniteLoop interval={2500} showThumbs={false}>
             <div  >
 
                 {<Cards product={item1} />}
@@ -218,7 +218,7 @@ export default function Inicial({item1,item2,item3,
     
    <div className="carousel-wrapper   grid  lg:grid-cols-1 gap-4 "  >
         <Carousel  centerMode={true} centerSlidePercentage={30} autoPlay   
-        infiniteLoop interval={2500} showIndicators showStatus>
+        infiniteLoop interval={2500} showIndicators showStatus showThumbs={false}>
             <div >
 
                 {<Cards product={item7}/>}

@@ -5,9 +5,15 @@ import { getItem, setItem } from "../../services/LocalStorageproducts";
 export const CartContext = createContext({});
 
 export default function CartProvider({ children }) {
+	
+	const[seedetails, setSeedetail]=useState([])
 	const [productCart, setProductCart] = useState(getItem("basket") || []);
 	const Amount= productCart.reduce((a,c)=>a+c.qtd*c.obj.price,0).toFixed(2)
 	const individualqtd=productCart.reduce((a,c)=>a+c.qtd,0)
+
+
+
+
 	
 	function addToCart(obj) {
 		const copyProductCart = [...productCart];
@@ -49,7 +55,7 @@ export default function CartProvider({ children }) {
 
 	return (
 		<CartContext.Provider
-			value={{productCart, addToCart, removeCart, clearCart,Amount,individualqtd }}
+			value={{productCart, addToCart, removeCart, clearCart,Amount,individualqtd, }}
 		>
 			{children}
 		</CartContext.Provider>

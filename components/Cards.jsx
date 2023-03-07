@@ -8,27 +8,53 @@ import { CartContext } from '../Contexts/cartContext'
 import Image from 'next/image'
 import {MdOutlineFavoriteBorder} from "react-icons/md";
 import { useState } from 'react'
+import Detailmodal from './Detailmodal'
+
+
+
 
 
 export default function Cards({product}) {
 
  const[favcolor,setFavcolor]=useState(false)
+ const[showDetailModal,setShowDetailModal]=useState(false)
+ const[prod, setProd]=useState({})
 
 
+ const {addToCart}=useContext(CartContext)
+ const Api="https://fakestoreapi.com/products"
+
+ const discount=(((product.discountPercentage)/100) *(product.price)).toFixed(2)
+ const Valuewithdiscount=((product.price)-discount)
 
  const changefavcolor=()=>{
   setFavcolor(!favcolor)
  }
 
-  const {addToCart}=useContext(CartContext)
 
-  var discount=(((product.discountPercentage)/100) *(product.price)).toFixed(2)
-  var Valuewithdiscount=((product.price)-discount)
 
+
+ function showDetail(id){
+  fetch(`https://fakestoreapi.com/products/${id}`)
+  .then(response => response.json())
+  .then(data => setProd(data));      
+ }
+
+ 
+
+
+
+  function rendermodal(id) {
+
+    setShowDetailModal(true)
+   showDetail(id)
+
+
+  }
 
  
   return (
-    
+    <>
     <div style={{width:"324px",height:"451px", margin:"12px"}}>
  
       
@@ -38,7 +64,8 @@ export default function Cards({product}) {
              <MdOutlineFavoriteBorder   onClick={changefavcolor} size={24} style={{fill :favcolor ? "#D51451":"#000000"}}
       className='absolute top-2 right-2'  
     />
-          <Link href={`/product/${product.id}`}>
+          <div  onClick={()=>rendermodal(product.id)}   >
+
           <div style={{width:"200px", height:"200px"}}>
           {product.images &&
             <Image src={ product.images[1]} height={400} width={400}  
@@ -51,7 +78,7 @@ export default function Cards({product}) {
           }
             
           </div>
-          </Link>
+          </div>
         </div>
       
       <div className='text-left'>
@@ -84,7 +111,14 @@ export default function Cards({product}) {
             <b>ADD TO CART</b>  
         </button>
     </div>
-
-   
+         {
+      showDetailModal && <Detailmodal setShowDetailModal={setShowDetailModal} product={prod}
+            />
+          
+         }
+         
+       
+         
+    </>
   )
 }

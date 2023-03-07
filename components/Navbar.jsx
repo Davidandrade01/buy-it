@@ -34,7 +34,7 @@ export default function Navbar() {
 
 return (
 <div className="relative mb-44  " >
-<header className="fixed top-0 left-0 right-0 bg-white  " >
+<header className="fixed top-0 left-0 right-0 bg-white z-50 " >
 <nav className="flex h-32 justify-between shadow-md items-center px-4  "  >
 <Link href="/" >
 					
