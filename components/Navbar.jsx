@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -16,6 +16,7 @@ import Dropdman from "./dropdman";
 import DropdWomen from "./DropdWomen";
 import DpdSales from "./DpdSales";
 import Bag from "./Bag";
+import SearchBar from "./SearchBar";
 
 //Context and hooks
 import { CartContext } from "../Contexts/cartContext";
@@ -25,16 +26,30 @@ import { useAuthValue } from "../contexts/AuthContext";
 
 export default function Navbar() {
 
+	const apireq="https://dummyjson.com/products/search?q=" 
 
 	const { productCart } = useContext(CartContext);
 	const {user}=useAuthValue()
 	const[showbag,setShowbag]=useState(false)
+	const[text, setText]=useState("")
+	const[item,setItem ]=useState([])
 	
+
+	console.log(item)
+
+	useEffect(()=>{
+		
+		if(text){
+			fetch(`${apireq}${text}`)
+		.then(res => res.json())
+		.then((res)=>{setItem(res)});
+		   }
+	},[text])
 
 
 return (
 <div className="relative mb-44  " >
-<header className="fixed top-0 left-0 right-0 bg-white z-50 " >
+<header className="fixed top-0 left-0 right-0 bg-white z-40 " >
 <nav className="flex h-32 justify-between shadow-md items-center px-4  "  >
 <Link href="/" >
 					
@@ -42,15 +57,17 @@ return (
 						
 </Link>
 <div className="flex-col items-center justify-center ">
-	<div className="flex mb-3  place-content-center items-center mt-0"  style={{borderBottom: " 1px solid black",}}   >
-	
-	<input className="w-64 ml-8" type="text" placeholder="Hi, what are you looking for today?"   />
-	<BsSearch/>
+
+	<SearchBar value={text} onChange={(req)=>setText(req)} />	
+
+	{item &&(
+		
+	<div>
+	teste
 	</div>
-	
+	)}
 							
-							
-	<div className="flex gap-20">
+	<div  className="flex gap-20">
 		<Dropdtech/>
 		<Dropdcollections/>
 		<Dropdman/>

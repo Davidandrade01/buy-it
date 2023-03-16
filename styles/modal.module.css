@@ -1,0 +1,159 @@
+.background{
+    position: fixed;
+    background-color: rgb(88, 84, 84);
+    width: 700px;
+    height: 700px;
+    z-index: 999;
+   
+
+
+}
+
+
+
+.modal{
+   
+    position: fixed;
+    top: calc(50% - (100px ));
+    left: calc(50% - (300px ));
+    width: 400px;
+    height: 300px;
+    z-index: 1000;
+}
+
+
+
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay{
+    background-color: rgba(10, 10, 10, 0.503);
+    position: fixed;
+    top:0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 888;
+    
+}
+
+.content{
+    width: 800px;
+    height: 530px;
+   
+    background-color: #ffff;
+    padding: 20px;
+    border-radius: 12px;
+    position: relative;
+
+   
+
+}
+
+.btn_exit{
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.bread_crumbs{
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    margin-top: 2rem;
+
+}
+
+.container_product{
+    display: flex;
+}
+
+.product_detail{
+    width: 324px;
+    height:324px;
+    border: 1px solid black;
+    display: flex;
+   position:relative;
+   justify-content: center;
+   align-items: center;
+   
+   
+}
+
+.favorites{
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+  
+}
+
+.product_info{
+    margin-left: 5rem;
+    margin-bottom: 4rem;
+    width: 324px;
+    height: 68px;
+}
+.product_description{
+    width: 324px;
+    height: 68px;
+    overflow: hidden;
+    margin-bottom: 2rem;
+}
+
+.qty{
+    display: flex;
+    align-items: center;
+}
+.add_sub{
+    display: flex;
+    background-color: #9B9A9A;
+    color: #ffff;
+    justify-content: center;
+    align-items: center;
+    
+    height: 20px;
+    width: 20px;
+}
+
+
+.adj_qtdy{
+    width: 324px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+
+}
+.qty{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.individual_qty{
+    border:1px solid #484848;
+    width: 36px;
+    height: 20px;
+    margin-left: 4px;
+    margin-right: 4px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.btn_discard{
+display: flex;
+justify-items: center;
+align-items: center;
+color:#484848
+}

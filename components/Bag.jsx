@@ -24,7 +24,7 @@ export default function Bag({open,close}) {
   return (
     <>
     
-      <div onMouseLeave={close} style={{border:"1px solid black" , zIndex:"1000",right:"0", top:"-50px" , width:"400px",  }} 
+      <div onMouseLeave={close} style={{border:"1px solid black" , zIndex:"1000",position:"absolute", overflow:"scroll",right:"0", top:"50%vh" , width:"400px",  }} 
       className='bag-container  '>
         
 
@@ -62,6 +62,7 @@ export default function Bag({open,close}) {
                   <div className='limit-ch w-36 ml-3'>
                     <p className='mb-2'>{product.obj.title}</p>
                     <p className='mb-2'>{product.obj.category}</p>
+                    <p>Qty: ({product.qtd})</p>
 
                     <div>
                       {product.obj.rating.rate ?

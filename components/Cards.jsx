@@ -14,12 +14,10 @@ import Detailmodal from './Detailmodal'
 
 
 
-export default function Cards({product}) {
+export default function Cards({product,onCardClick}) {
 
  const[favcolor,setFavcolor]=useState(false)
- const[showDetailModal,setShowDetailModal]=useState(false)
- const[prod, setProd]=useState({})
-
+ 
 
  const {addToCart}=useContext(CartContext)
  const Api="https://fakestoreapi.com/products"
@@ -34,24 +32,10 @@ export default function Cards({product}) {
 
 
 
- function showDetail(id){
-  fetch(`https://fakestoreapi.com/products/${id}`)
-  .then(response => response.json())
-  .then(data => setProd(data));      
- }
+
+
 
  
-
-
-
-  function rendermodal(id) {
-
-    setShowDetailModal(true)
-   showDetail(id)
-
-
-  }
-
  
   return (
     <>
@@ -64,7 +48,8 @@ export default function Cards({product}) {
              <MdOutlineFavoriteBorder   onClick={changefavcolor} size={24} style={{fill :favcolor ? "#D51451":"#000000"}}
       className='absolute top-2 right-2'  
     />
-          <div  onClick={()=>rendermodal(product.id)}   >
+          <div  onClick={() => onCardClick ? onCardClick(product) : null}
+            key={product.id}>
 
           <div style={{width:"200px", height:"200px"}}>
           {product.images &&
@@ -111,11 +96,9 @@ export default function Cards({product}) {
             <b>ADD TO CART</b>  
         </button>
     </div>
-         {
-      showDetailModal && <Detailmodal setShowDetailModal={setShowDetailModal} product={prod}
-            />
-          
-         }
+         
+         
+         
          
        
          

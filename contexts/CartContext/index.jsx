@@ -10,9 +10,10 @@ export default function CartProvider({ children }) {
 	const [productCart, setProductCart] = useState(getItem("basket") || []);
 	const Amount= productCart.reduce((a,c)=>a+c.qtd*c.obj.price,0).toFixed(2)
 	const individualqtd=productCart.reduce((a,c)=>a+c.qtd,0)
+	
+	const qty=productCart.map((element)=>(<div key={element.id}>{element.qty}</div>))
 
-
-
+	
 
 	
 	function addToCart(obj) {
@@ -29,7 +30,7 @@ export default function CartProvider({ children }) {
 		setProductCart(copyProductCart);
 		setItem("basket ", copyProductCart);
 
-		console.log("copyProductCart: ", copyProductCart);
+		//console.log("copyProductCart: ", copyProductCart);
 	}
 
 	function removeCart(obj) {
@@ -46,7 +47,7 @@ export default function CartProvider({ children }) {
 			setProductCart(arrayfiltered);
 		}
 		setItem("basket ", copyProductCart);
-		console.log(copyProductCart);
+		//console.log(copyProductCart);
 	}
 
 	function clearCart() {
@@ -55,7 +56,7 @@ export default function CartProvider({ children }) {
 
 	return (
 		<CartContext.Provider
-			value={{productCart, addToCart, removeCart, clearCart,Amount,individualqtd, }}
+			value={{productCart, addToCart, removeCart, clearCart,Amount,individualqtd,qty }}
 		>
 			{children}
 		</CartContext.Provider>

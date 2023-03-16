@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Cards from '../components/Cards'
 import Letter from '../components/Letter';
+import Modal from '../components/Modal'
 
 
 export  async  function getStaticProps() {
@@ -76,6 +77,34 @@ export  async  function getStaticProps() {
 
 export default function Inicial({item1,item2,item3,
   item4,item5,item6,item7,item8, item9, item10, item11, item12}) {
+
+    const apiUrl1="https://fakestoreapi.com/products/"
+    const apiUrl2="https://dummyjson.com/products/"
+    const[openmodal,setOpenmodal]=useState(false)
+    const [products, setProducts] = useState({});
+    const[selectedProduct, setSelectedProduct]=useState(null)
+   
+  
+  
+    
+  useEffect(() => {
+    fetch(apiUrl1)
+    .then(res=>res.json())
+    .then((json) => setProducts(json))
+    
+  }, []);
+
+    useEffect(()=>{
+  fetch(apiUrl2)
+  .then(res=>res.json())
+  .then((json)=>setProducts(json))
+    })
+
+
+    const handleClick=(product)=>{
+      setSelectedProduct(product)
+      setOpenmodal(true)
+     }
    
   return (
     <>
@@ -170,40 +199,42 @@ export default function Inicial({item1,item2,item3,
      </div>
    </div>
    </div>
-   <div className='text-center text-bunner mt-32 mb-8'>
+   <div className='text-center text-bunner mt-32 mb-8 relative'>
     <p>This week’s <b>highlights</b></p>
+    
+    
    </div>
-   <div className="carousel-wrapper   grid  lg:grid-cols-1 gap-4 " >
-        <Carousel  centerMode={true} centerSlidePercentage={30} autoPlay swipeable infiniteLoop interval={2500} showThumbs={false}>
-            <div  >
-
-                {<Cards product={item1} />}
+   <div  className="carousel-wrapper   grid  lg:grid-cols-1 gap-4  " >
+        <Carousel className='relative'  centerMode={true} centerSlidePercentage={30}  showStatus={false}  showThumbs={false}>
+            <div >
+        
+                {<Cards product={item1} onCardClick={handleClick} />}
             
             </div>
            
             <div>
             
-                {<Cards product={item2}/>}
+                {<Cards product={item2} onCardClick={handleClick}/>}
             
             </div>
              <div>
             
-                {<Cards product={item3}/>}
+                {<Cards product={item3}onCardClick={handleClick}/>}
             
             </div>
             <div>
             
-            {<Cards product={item4}/>}
+            {<Cards product={item4}onCardClick={handleClick}/>}
         
         </div>
         <div>
             
-            {<Cards product={item5}/>}
+            {<Cards product={item5}onCardClick={handleClick}/>}
         
         </div>
         <div>
             
-            {<Cards product={item6}/>}
+            {<Cards product={item6}onCardClick={handleClick}/>}
         
         </div>
           
@@ -217,44 +248,47 @@ export default function Inicial({item1,item2,item3,
    </div>
     
    <div className="carousel-wrapper   grid  lg:grid-cols-1 gap-4 "  >
-        <Carousel  centerMode={true} centerSlidePercentage={30} autoPlay   
-        infiniteLoop interval={2500} showIndicators showStatus showThumbs={false}>
+        <Carousel  centerMode={true} centerSlidePercentage={30}   
+        showStatus={false} showThumbs={false}>
             <div >
 
-                {<Cards product={item7}/>}
+                {<Cards product={item7} onCardClick={ handleClick}/>}
             
             </div>
 
             <div  >
 
-          {<Cards product={item8}/>}
+          {<Cards product={item8}onCardClick={ handleClick}/>}
 
             </div>
             <div  >
 
-          {<Cards product={item9}/>}
+          {<Cards product={item9}onCardClick={ handleClick}/>}
 
             </div>
             <div  >
 
-          {<Cards product={item10}/>}
+          {<Cards product={item10}onCardClick={ handleClick}/>}
 
             </div>
             <div  >
 
-          {<Cards product={item11}/>}
+          {<Cards product={item11}onCardClick={ handleClick}/>}
 
             </div>
             <div  >
 
-          {<Cards product={item12}/>}
+          {<Cards product={item12}onCardClick={ handleClick}/>}
 
             </div>
 
     
     </Carousel>
     </div>
+      {openmodal && <Modal setOpenmodal={setOpenmodal} product={selectedProduct}  />}
+      <div>
 
+  </div>
       <Letter/>
     </>
   )
