@@ -1,0 +1,32 @@
+.searchList{
+background-color: #fff;
+border-radius: 12px;
+position: absolute;
+z-index: 1000;
+width: 60%;
+height: 100px;
+overflow-y: scroll;
+scroll-behavior: smooth;
+text-transform: capitalize;
+box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+margin-top: 4.5%;
+
+    left:50%;
+    transform: translate(-50%, -50%)
+
+}
+.searchList::-webkit-scrollbar {
+    display: none;
+}
+
+.prod{
+    margin: 8px;
+    padding: 2px;
+}
+.prod:hover{
+    background-color: black;
+    color: #fff;
+    cursor: pointer;
+    
+    
+}

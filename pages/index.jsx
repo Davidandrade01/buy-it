@@ -121,6 +121,7 @@ export default function Inicial({item1,item2,item3,
             <p>that connects </p>
             <p><b>Technology</b> </p>
             <p>that transforms</p>
+         
           
         </div>
         

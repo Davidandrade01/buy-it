@@ -1,6 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { Menu } from "@headlessui/react";
+//styles
+import  styles from "../styles/navbar.module.css"
 
 //ICONS
 import { AiOutlineMail } from "react-icons/ai";
@@ -31,20 +34,23 @@ export default function Navbar() {
 	const { productCart } = useContext(CartContext);
 	const {user}=useAuthValue()
 	const[showbag,setShowbag]=useState(false)
-	const[text, setText]=useState("")
+	const[search, setsearch]=useState("")
 	const[item,setItem ]=useState([])
+
+	
 	
 
 	console.log(item)
 
 	useEffect(()=>{
-		
-		if(text){
-			fetch(`${apireq}${text}`)
+	
+		if(search){
+			setItem()
+			fetch(`${apireq}${search}`)
 		.then(res => res.json())
 		.then((res)=>{setItem(res)});
 		   }
-	},[text])
+	},[search])
 
 
 return (
@@ -58,21 +64,25 @@ return (
 </Link>
 <div className="flex-col items-center justify-center ">
 
-	<SearchBar value={text} onChange={(req)=>setText(req)} />	
+	<SearchBar value={search} onChange={(req)=>setsearch(req)} />	
 
-	{item &&(
+	{item.products &&
 		
-	<div>
-	teste
-	</div>
-	)}
-							
+		<ul className={styles.searchList}>
+		{item.products.map((prod)=>(<li  className={styles.prod}
+		 key={prod.id}>{prod.title}</li>))}
+		</ul>
+	
+	}
+			
 	<div  className="flex gap-20">
+		
 		<Dropdtech/>
-		<Dropdcollections/>
+		<Dropdcollections/>	
 		<Dropdman/>
 		<DropdWomen/>
 		<DpdSales/>
+		
 						
 	</div>
 </div>
