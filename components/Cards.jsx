@@ -43,8 +43,8 @@ export default function Cards({product,onCardClick}) {
  
       
       
-        <div style={{width:"324px", height:"301px", border:"1px solid black",}}
-        className='flex justify-center items-center mb-2 hover:opacity-80 relative'>
+        <div style={{width:"324px", height:"301px", border:"1px solid black",cursor:"pointer"}}
+        className='flex justify-center items-center mb-2 hover:opacity-80 relative '>
              <MdOutlineFavoriteBorder   onClick={changefavcolor} size={24} style={{fill :favcolor ? "#D51451":"#000000"}}
       className='absolute top-2 right-2'  
     />
