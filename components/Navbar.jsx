@@ -45,8 +45,8 @@ export default function Navbar() {
 	useEffect(()=>{
 	
 		if(search){
-			setItem()
-			fetch(`${apireq}${search}`)
+			
+			fetch(`https://dummyjson.com/products/search?q=${search}`)
 		.then(res => res.json())
 		.then((res)=>{setItem(res)});
 		   }
@@ -66,14 +66,14 @@ return (
 
 	<SearchBar value={search} onChange={(req)=>setsearch(req)} />	
 
-	{item.products &&
-		
-		<ul className={styles.searchList}>
-		{item.products.map((prod)=>(<li  className={styles.prod}
-		 key={prod.id}>{prod.title}</li>))}
-		</ul>
 	
-	}
+	{item.products &&(
+		<ul className={styles.searchList}>
+			{item.products.map((element)=>(
+				<li className={styles.searchList_item} key={element.id}>{element.title}</li>
+			))}
+		</ul>
+	)}
 			
 	<div  className="flex gap-20">
 		
