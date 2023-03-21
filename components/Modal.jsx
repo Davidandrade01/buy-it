@@ -16,6 +16,7 @@ import { CartContext } from "../Contexts/cartContext";
 
 
 export default function Modal({setOpenmodal, product}) {
+  
 
   const {productCart, addToCart, removeCart, clearCart,Amount,individualqtd}=useContext(CartContext)
 
