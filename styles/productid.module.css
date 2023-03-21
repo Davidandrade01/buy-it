@@ -1,0 +1,38 @@
+.container{
+    border: 1px solid black;
+}
+
+.content{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.title{
+    text-align: center;
+    margin: 24px;
+    
+}
+
+.thumb{
+    margin-bottom: 12px;
+    margin-left: 12px;
+}
+
+
+.container_dots{
+    display: flex;
+    margin-top: 8px;
+    margin-bottom: 20px;
+    margin-left: 12px;
+    gap:44px;
+    justify-content: start;
+    cursor: pointer;
+    
+    
+    
+}
+
+.dots{
+    
+    
+}

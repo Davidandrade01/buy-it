@@ -62,7 +62,7 @@ export  async  function getStaticProps() {
 
   const res12= await fetch(`${api12}`)
   const item12= await res12.json()
-  //console.log(items)
+  
  
   return{
       props:{
@@ -78,8 +78,7 @@ export  async  function getStaticProps() {
 export default function Inicial({item1,item2,item3,
   item4,item5,item6,item7,item8, item9, item10, item11, item12}) {
 
-    const apiUrl1="https://fakestoreapi.com/products/"
-    const apiUrl2="https://dummyjson.com/products/"
+   
     const[openmodal,setOpenmodal]=useState(false)
     const [products, setProducts] = useState({});
     const[selectedProduct, setSelectedProduct]=useState(null)
@@ -87,18 +86,7 @@ export default function Inicial({item1,item2,item3,
   
   
     
-  useEffect(() => {
-    fetch(apiUrl1)
-    .then(res=>res.json())
-    .then((json) => setProducts(json))
-    
-  }, []);
 
-    useEffect(()=>{
-  fetch(apiUrl2)
-  .then(res=>res.json())
-  .then((json)=>setProducts(json))
-    })
 
 
     const handleClick=(product)=>{

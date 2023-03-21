@@ -70,7 +70,7 @@ return (
 	{item.products &&(
 		<ul className={styles.searchList}>
 			{item.products.map((element)=>(
-				<li className={styles.searchList_item} key={element.id}>{element.title}</li>
+				<li className={styles.searchList_item} key={element.id}><Link href={`product/${element.id}`}>{element.title}</Link></li>
 			))}
 		</ul>
 	)}
