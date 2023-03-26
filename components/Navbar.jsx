@@ -46,7 +46,7 @@ export default function Navbar() {
 	
 		if(search){
 			
-			fetch(`https://dummyjson.com/products/search?q=${search}`)
+		fetch(`https://dummyjson.com/products/search?q=${search}`)
 		.then(res => res.json())
 		.then((res)=>{setItem(res)});
 		   }
@@ -54,7 +54,7 @@ export default function Navbar() {
 
 
 return (
-<div className="relative mb-44  " >
+<div className="relative " style={{marginBottom:"170px"}} >
 <header className="fixed top-0 left-0 right-0 bg-white z-40 " >
 <nav className="flex h-32 justify-between shadow-md items-center px-4  "  >
 <Link href="/" >
@@ -64,7 +64,11 @@ return (
 </Link>
 <div className="flex-col items-center justify-center ">
 
-	<SearchBar value={search} onChange={(req)=>setsearch(req)} />	
+	<SearchBar 
+	
+	
+	
+	 onChange={(req)=>setsearch(req)} />	
 
 	
 	{item.products &&(

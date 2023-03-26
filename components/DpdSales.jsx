@@ -13,13 +13,13 @@ export default function DpdSales() {
 
     <Menu.Items className='headless-items-container '>
         <Menu.Item className='headless-item'>
-        <p>Lighting</p>
+        <Link href='/menu?search=lighting'>Lighting</Link>
         </Menu.Item>
         <Menu.Item className='headless-item'>
-        <p>Decoration</p>
+        <Link href='/menu?search=home-decoration'>Decoration</Link>
         </Menu.Item>
         <Menu.Item className='headless-item'>
-        <p> Fragrances</p>
+         <Link href='/menu?search=fragrances'>Fragrances</Link>
         </Menu.Item>
     </Menu.Items>
     

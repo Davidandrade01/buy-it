@@ -11,56 +11,58 @@ import Modal from '../components/Modal'
 export  async  function getStaticProps() {
 
   
-  const api1="https://fakestoreapi.com/products/1"
-  const api2="https://fakestoreapi.com/products/3"
-  const api3="https://fakestoreapi.com/products/2"
-  const api4="https://fakestoreapi.com/products/17"
-  const api5="https://fakestoreapi.com/products/4"
-  const api6="https://fakestoreapi.com/products/15"
+  const api1='https://fakestoreapi.com/products/1';
+  const api2='https://fakestoreapi.com/products/3';
+  const api3='https://fakestoreapi.com/products/2';
+  const api4='https://fakestoreapi.com/products/17';
+  const api5='https://fakestoreapi.com/products/4';
+  const api6='https://fakestoreapi.com/products/15';
 
-  const api7='https://dummyjson.com/products/6'
-  const api8='https://dummyjson.com/products/9'
-  const api9='https://dummyjson.com/products/10'
-  const api10='https://dummyjson.com/products/90'
-  const api11='https://dummyjson.com/products/62'
-  const api12='https://dummyjson.com/products/4'
+  const api7='https://dummyjson.com/products/6';
+  const api8='https://dummyjson.com/products/9';
+  const api9='https://dummyjson.com/products/10';
+  const api10='https://dummyjson.com/products/90';
+  const api11='https://dummyjson.com/products/62';
+  const api12='https://dummyjson.com/products/4';
   
   
-  const res1= await fetch(`${api1}`)
-  const item1= await res1.json()
+  const res1= await fetch(api1);
+  const item1= await res1.json();
 
-  const res2= await fetch(`${api2}`)
-  const item2= await res2.json()
-
-  const res3= await fetch(`${api3}`)
-  const item3= await res3.json()
-
-  const res4= await fetch(`${api4}`)
-  const item4= await res4.json()
-
-  const res5= await fetch(`${api5}`)
-  const item5= await res5.json()
-
-  const res6= await fetch(`${api6}`)
-  const item6= await res6.json()
+ 
 
 
-  const res7= await fetch(`${api7}`)
-  const item7= await res7.json()
+  const res2= await fetch(api2);
+  const item2= await res2.json();
 
-  const res8= await fetch(`${api8}`)
-  const item8= await res8.json()
+  const res3= await fetch(api3);
+  const item3= await res3.json();
 
-  const res9= await fetch(`${api9}`)
-  const item9= await res9.json()
+  const res4= await fetch(api4);
+  const item4= await res4.json();
 
-  const res10= await fetch(`${api10}`)
+  const res5= await fetch(api5);
+  const item5= await res5.json();
+
+  const res6= await fetch(api6);
+  const item6= await res6.json();
+
+  const res7= await fetch(api7);
+  const item7= await res7.json();
+
+  const res8= await fetch(api8);
+  const item8= await res8.json();
+
+  const res9= await fetch(api9);
+  const item9= await res9.json();                 
+
+  const res10= await fetch(api10)
   const item10= await res10.json()
 
-  const res11= await fetch(`${api11}`)
+  const res11= await fetch(api11)
   const item11= await res11.json()
 
-  const res12= await fetch(`${api12}`)
+  const res12= await fetch(api12)
   const item12= await res12.json()
   
  
@@ -133,7 +135,7 @@ export default function Inicial({item1,item2,item3,
       <Link href='/cart' className='flex flex-col items-center'>
 
       <div className=' bg-black'>
-      <Image className=' hover:opacity-80'  src='/images/Card chamadas.png'
+      <Image className=' hover:o  city-80'  src='/images/Card chamadas.png'
       width={324} height={324} alt=' pc' />
       </div>
       <button style={{border:"1px solid black", marginTop:"44px"}}

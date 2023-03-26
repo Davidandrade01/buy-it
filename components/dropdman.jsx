@@ -13,13 +13,19 @@ export default function Dropdman() {
 
     <Menu.Items className='headless-items-container '>
         <Menu.Item className='headless-item'>
-            <p>M. Shirts</p>
+            <Link href='/menu?search=mens-shirts'>M. Shirts</Link>
         </Menu.Item>
+
         <Menu.Item className='headless-item'>
-        <p>M. Shoes</p>
+
+        <Link href='/menu?search=mens-shoes'>M. Shoes</Link>
+
         </Menu.Item>
+
         <Menu.Item className='headless-item'>
-        <p>M. Watches</p>
+
+        <Link href='/menu?search=mens-watches'>M. Watches</Link>
+
         </Menu.Item>
     </Menu.Items>
     

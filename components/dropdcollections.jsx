@@ -13,13 +13,13 @@ export default function Dropdcollections() {
 
     <Menu.Items className='headless-items-container '>
         <Menu.Item className='headless-item'>
-            <p>Sunglasses</p>
+            <Link href='/menu?search=sunglasses'>Sunglasses</Link>
         </Menu.Item>
         <Menu.Item className='headless-item'>
-        <p>Dresses</p>
+        <Link href='/menu?search=womens-dresses'>Dresses</Link>
         </Menu.Item>
         <Menu.Item className='headless-item'>
-        <p>W. Shoes</p>
+        <Link href='/menu?search=womens-shoes'>W. Shoes</Link>
         </Menu.Item>
     </Menu.Items>
     

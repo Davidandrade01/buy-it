@@ -14,13 +14,13 @@ export default function DropdWomen() {
 
     <Menu.Items className='headless-items-container '>
         <Menu.Item className='headless-item'>
-            <p>Dress</p>
+            <Link href='/menu?search=womens-dresses'>Dress</Link>
         </Menu.Item>
         <Menu.Item className='headless-item'>
-        <p>W. Jewellery</p>
+        <Link href='/menu?search=womens-jewellery'>W. Jewellery</Link>
         </Menu.Item>
         <Menu.Item className='headless-item'>
-        <p>W. Bag</p>
+        <Link href='/menu?search=womens-bags'>W. Bag</Link>
         </Menu.Item>
     </Menu.Items>
     

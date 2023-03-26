@@ -15,10 +15,10 @@ export default function Dropdtech() {
 
     <Menu.Items className='headless-items-container '>
         <Menu.Item className='headless-item'>
-            <p>Smartphones</p>
+            <Link href='/menu?search=smartphones'>Smartphones</Link>
         </Menu.Item>
         <Menu.Item className='headless-item'>
-        <p>Laptops</p>
+        <Link  href='/menu?search=laptops'>Laptops</Link>
         </Menu.Item>
     </Menu.Items>
     
