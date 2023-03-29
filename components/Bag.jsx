@@ -8,12 +8,13 @@ import Link from 'next/link'
 import {FaStar} from 'react-icons/fa'
 import {GrFormClose} from 'react-icons/gr'
 import {CiTrash} from 'react-icons/ci'
+import {SlBag}from 'react-icons/sl'
 
 //Context
 import { useContext } from 'react'
 import { CartContext } from '../Contexts/cartContext'
 
-
+import styles from '../styles/bag.module.css'
  
 export default function Bag({open,close}) {
  
@@ -24,14 +25,12 @@ export default function Bag({open,close}) {
   return (
     <>
     
-      <div onMouseLeave={close} style={{border:"1px solid black" , zIndex:"1000",position:"absolute",right:"0", top:"50%vh" , width:"400px",  }} 
-      className='bag-container  '>
+      <div  className={styles.bag_container}>
         
-
         {
         productCart.length==0?
         (
-            <div className='flex  flex-col items-center'>
+            <div className={styles.bag_box}>
                 
                     <Image src="/images/Empty bag.png" width={200} height={200} alt="go Shopping" />
                     Ups.. Empty Cart! 
@@ -41,7 +40,7 @@ export default function Bag({open,close}) {
         ):
         (
             <>
-            <div className='m-2 mb-4 flex items-center justify-between cursor-pointer '><b>Bag ({productCart.length})</b>
+            <div className='m-2 mb-4 flex items-center justify-between cursor-pointer '> <div className='flex gap-1 items-center'> <SlBag/><b> Bag ({productCart.length})</b></div>
             <GrFormClose onClick={close} size={20}   />
             </div>
             {productCart.map((product)=>(

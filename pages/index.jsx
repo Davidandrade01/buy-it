@@ -98,10 +98,10 @@ export default function Inicial({item1,item2,item3,
    
   return (
     <>
-    <div className=' mb-7 -ml-14 flex items-center justify-between ' 
+    <div className=' mb-7 -ml-14 -mt-4 flex items-center justify-between ' 
     style={{ width:"100%"}}>
       
-        <Image src='/images/hero.png' width={670} height={50}alt="Girl on sofa"
+        <Image src='/images/hero.png' width={800} height={50}alt="Girl on sofa"
             
         />
 

@@ -1,0 +1,45 @@
+.bag_container{
+border:1px solid #000;
+ z-index:1000;
+position:fixed;
+overflow-y: scroll;
+right:0px;
+ top:127px ;
+ width:400px;
+ height:400px;
+ background-color:#fff;
+
+ 
+    }
+
+    .bag_container::-webkit-scrollbar {
+        width: 10px;
+       
+    }
+
+    .bag_container::-webkit-scrollbar-track{
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+        padding:2px;
+        margin:30px;
+        margin-left:10px
+        
+    }
+
+    .bag_container::-webkit-scrollbar-thumb{
+        background:#000;
+        border-radius: 10px;
+        padding:2px
+       
+    }
+
+    .bag_container::-webkit-scrollbar-thumb:hover {
+        background: #555;
+      }
+    
+
+.bag_box{
+    display:flex;
+    flex-direction: column;
+    justify-items: center;
+}

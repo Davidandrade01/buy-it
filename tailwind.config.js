@@ -13,5 +13,7 @@ module.exports = {
       Rubik:["Rubik","sans-serif"]
     }
   },
-  plugins: [],
+  plugins: [
+   
+  ],
 }
