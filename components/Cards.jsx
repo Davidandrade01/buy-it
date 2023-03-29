@@ -8,7 +8,7 @@ import { CartContext } from '../Contexts/cartContext'
 import Image from 'next/image'
 import {MdOutlineFavoriteBorder} from "react-icons/md";
 import { useState } from 'react'
-import Detailmodal from './Detailmodal'
+
 
 
 
@@ -51,10 +51,10 @@ export default function Cards({product,onCardClick}) {
           <div  onClick={() => onCardClick ? onCardClick(product) : null}
             key={product.id}>
 
-          <div style={{width:"200px", height:"200px"}}>
+          <div style={{width:"200px", height:"200px",}}>
           {product.images &&
-            <Image src={ product.images[1]} height={400} width={400}  
-            alt={product.title} className="max-w-fit max-h-full " />
+            <Image src={ product.images[1]} height={200} width={200}  
+            alt={product.title} className="max-w-fit max-h-full   " />
           }
 
           {product.image &&

@@ -1,9 +1,10 @@
 import React from 'react'
+import Letter from '../components/Letter'
 
 export default function Newsletter() {
   return (
-    <div>
-     <h1>Nesletter</h1>
+    <div >
+     <Letter/>
     </div>
   )
 }

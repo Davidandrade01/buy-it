@@ -117,7 +117,7 @@ export default function Inicial({item1,item2,item3,
         
         <button style={{border:"1px solid black", marginTop:"44px"}}
          className='btn' >
-            <b>SEE NEW COLLECTION</b>  
+            <Link href='/menu?search=womens-shoes'><b>SEE NEW COLLECTION</b> </Link> 
         </button>
       
         </div>
@@ -132,19 +132,21 @@ export default function Inicial({item1,item2,item3,
 
     <div className="flex justify-evenly">
 
-      <Link href='/cart' className='flex flex-col items-center'>
+      <Link  href='/menu?search=laptops' className='flex flex-col items-center'>
 
       <div className=' bg-black'>
       <Image className=' hover:o  city-80'  src='/images/Card chamadas.png'
       width={324} height={324} alt=' pc' />
       </div>
-      <button style={{border:"1px solid black", marginTop:"44px"}}
-          className='text-button btn' >
-          <b>TECH FOR ALL</b>    
-      </button>
+     
+        <button style={{border:"1px solid black", marginTop:"44px"}}
+            className='text-button btn' >
+            <b>TECH FOR ALL</b>
+        </button>
+      
       </Link>
     
-      <Link href='/cart' className='flex flex-col items-center'>
+      <Link href='/menu?search=mens-shoes' className='flex flex-col items-center'>
 
       <div className=' bg-black'>
       <Image className=' hover:opacity-80'  src='/images/Card chamadas 2.png'
@@ -157,7 +159,7 @@ export default function Inicial({item1,item2,item3,
       
       </Link>
 
-        <Link href='/cart' className='flex flex-col items-center'>
+        <Link href='/menu?search=womens-bags' className='flex flex-col items-center'>
 
       <div className=' bg-black'>
       <Image className=' hover:opacity-80'  src='/images/Card chamadas 3.png'
@@ -196,7 +198,8 @@ export default function Inicial({item1,item2,item3,
     
    </div>
    <div  className="carousel-wrapper   grid  lg:grid-cols-1 gap-4  " >
-        <Carousel className='relative'  centerMode={true} centerSlidePercentage={30}  showStatus={false}  showThumbs={false}>
+        <Carousel className='relative'  centerMode={true} centerSlidePercentage={30} 
+         showStatus={false}  showThumbs={false} autoPlay infiniteLoop>
             <div >
         
                 {<Cards product={item1} onCardClick={handleClick} />}
@@ -240,7 +243,7 @@ export default function Inicial({item1,item2,item3,
     
    <div className="carousel-wrapper   grid  lg:grid-cols-1 gap-4 "  >
         <Carousel  centerMode={true} centerSlidePercentage={30}   
-        showStatus={false} showThumbs={false}>
+        showStatus={false} showThumbs={false} autoPlay infiniteLoop>
             <div >
 
                 {<Cards product={item7} onCardClick={ handleClick}/>}
