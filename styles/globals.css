@@ -101,13 +101,13 @@ a {
 .headless-items-container{
   @apply 
   absolute right-0 w-32  shadow-lg
-  bg-white rounded-2xl gap-2 p-3
+  bg-white  gap-2 p-3
 
  
 }
 .headless-item{
 @apply
-flex justify-between text-center hover:bg-blue-400  active:bg-blue-700
+flex justify-between text-center hover:bg-black  active:bg-slate-400
 hover:text-white
 }
 

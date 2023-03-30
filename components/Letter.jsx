@@ -10,16 +10,26 @@ export default function Letter() {
     <p className='text-base' style={{color:"#484848"}}>AND WIN 10% OFF YOUR FIRST ORDER </p>
     </div>
 
-      <div className='flex  items-end ml-28  '>
-          <input type="email" className='w-96 text-center mr-8 ' style={{borderBottom:"1px solid black"}} 
+      <form action="https://buy-it.us13.list-manage.com/subscribe/post?u=d1dea8f3f6c2acfced4fefe92&amp;id=982e1bf08d&amp;f_id=0026e7e2f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_self"
+      className='flex  items-end ml-28  '>
+          <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required
+           className='w-96 text-center mr-8 ' style={{borderBottom:"1px solid black"}} 
           placeholder="Your email here"
            />
-          <button className='cta-btn  '
-          style={{border:"1px solid black"}}
-          >
-          SUBMITION</button>
-      </div>
+          
+            
+          <input className='cta-btn cursor-pointer  '
+              style={{border:"1px solid black"}} type="submit" value="SUBSCRIBE HERE"/>
+          
+         
+      </form>
     </div>
     </>
   )
 }
+
+
+
+
+
+

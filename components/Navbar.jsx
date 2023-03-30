@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Menu } from "@headlessui/react";
+import { useRef } from 'react';
 //styles
 import  styles from "../styles/navbar.module.css"
 
@@ -28,7 +29,13 @@ import { useAuthValue } from "../contexts/AuthContext";
 
 
 export default function Navbar() {
+	
 
+
+	
+
+
+	
 	const apireq="https://dummyjson.com/products/search?q=" 
 
 	const { productCart } = useContext(CartContext);
@@ -37,6 +44,7 @@ export default function Navbar() {
 	const[search, setsearch]=useState("")
 	const[item,setItem ]=useState([])
 
+	
 	
 	
 
@@ -72,7 +80,7 @@ return (
 
 	
 	{item.products &&(
-		<ul className={styles.searchList}>
+		<ul   className={styles.searchList}>
 			{item.products.map((element)=>(
 				<li className={styles.searchList_item} key={element.id}><Link href={`product/${element.id}`}>{element.title}</Link></li>
 			))}

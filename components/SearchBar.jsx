@@ -3,6 +3,7 @@ import { BsPerson,BsSearch,BsTruck} from "react-icons/bs";
 import { useState } from 'react';
 import useDebounce from '../hooks/useDebounce';
 
+
 export default function SearchBar({value, onChange}) {
   
   //Bounce api
@@ -19,7 +20,7 @@ export default function SearchBar({value, onChange}) {
 
   return (
     <>
-     	<div className="flex mb-3  place-content-center items-center mt-0"  style={{borderBottom: " 1px solid black",}}   >
+     	<div  className="flex mb-3  place-content-center items-center mt-0"  style={{borderBottom: " 1px solid black",}}   >
          <input type="search" value={displayvalue} onChange={handleChange}    className="w-64 ml-8"  placeholder="Hi, what are you looking for today?"   />
 	<BsSearch/>
 	
