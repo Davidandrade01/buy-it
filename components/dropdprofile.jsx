@@ -13,39 +13,28 @@ export default function Dropdprofile() {
     const {logout}=useAuthentication()
     const {user}=useAuthValue()
   return (
+    
     <Menu as="div" className="relative inline-block">
     <Menu.Button className='mt-0 flex items-center text-button gap-1'>
          <BsPerson  />
         Hi, {user.displayName} <IoIosArrowDown/>
     </Menu.Button>
     <Menu.Items className='headless-items-container'>
-
+ 
     <Menu.Item className='headless-item'>
-     <Link href='/cart'>
-     <FiSettings/> Account
-     </Link>
+    <Link href='/'> <CiShoppingTag/> My Orders</Link>
+    </Menu.Item>
+   
+    <Menu.Item className='headless-item'>
+    <Link href='/'> <MdOutlineFavoriteBorder/>  Favorites  </Link>
     </Menu.Item>
 
     <Menu.Item className='headless-item'>
-     <Link href='/cart'>
-     <CiShoppingTag/> My Orders
-     </Link>
-    </Menu.Item>
-
-    <Menu.Item className='headless-item'>
-     <Link href='/cart'>
-     <MdOutlineFavoriteBorder/> Favorites
-     </Link>
-    </Menu.Item>
-
-    <Menu.Item  className='headless-item'>
-     
-    <Link href='#' onClick={logout}>
-     <FiLogOut />Logout
-     </Link>
+    <Link href='#' onClick={logout}><FiLogOut />Logout</Link>
     </Menu.Item>
 
     </Menu.Items>
     </Menu>
+  
   )
 }

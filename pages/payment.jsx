@@ -16,7 +16,7 @@ export default function Payment() {
   return (
     <>
       <CheckoutWizard activeStep={2}/>
-      <h1> Payment</h1>
+      
       <PayPalButtons
         createOrder={(data,actions)=>{
           return actions.order.create({

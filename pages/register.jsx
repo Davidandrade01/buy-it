@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useAuthentication } from '../hooks/useAuthentication'
 import{FiEye,FiEyeOff} from 'react-icons/fi'
+import styles  from  '../styles/register.module.css'
 
 export default function Register() {
 
@@ -45,11 +46,11 @@ setError(authError)
   return (
     <>
  
- <form onSubmit={handleSubmit} className="mx-auto max-w-screen-md" >
+ <form onSubmit={handleSubmit} className={styles.register_container} >
       
- <h1 className="mb-4 text-xl"><b>Register</b></h1>
 
- <div class="relative z-0 w-full mb-6 group">
+
+ <div className={styles.inputs}>
       <input type="displayName" id="displayName" class="floating-input peer" placeholder=" " 
        value={displayName}
        onChange={(e)=>setDisplayName(e.target.value)}  
@@ -59,7 +60,7 @@ setError(authError)
       <label for="Name" className="floating-label">Name</label>
 </div>
 
-<div class="relative z-0 w-full mb-6 group">
+<div className={styles.inputs}>
       <input type="email" id="email" class="floating-input peer" placeholder=" " 
        value={email}
        onChange={(e)=>setEmail(e.target.value)} 
@@ -69,7 +70,7 @@ setError(authError)
       <label for="email" className="floating-label">Email address *</label>
 </div>
 
-<div class="relative z-0 mb-6 group">
+<div className={styles.inputs}>
       <input type={hidepass ?"text":"password"}  name="password" id="password" class="floating-input peer" 
       placeholder="  " 
       value={password}
@@ -84,7 +85,7 @@ setError(authError)
        </button>
 </div>
 
-<div class="relative z-0 mb-6 group">
+<div className={styles.inputs}>
       <input type={hidepass ? "text": "password"} name="confirm Password" id="confirm Passwordassword" class="floating-input peer" 
       placeholder=" " 
       value={confirmPassword}
@@ -101,7 +102,7 @@ setError(authError)
 </div>
 
   <div className="mb-4 ">
-        <button  type='submit' className='primary-button'>Register</button> 
+        <button  type='submit' className='cta-btn'>Register</button> 
 
       
           

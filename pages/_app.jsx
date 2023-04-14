@@ -6,6 +6,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import { useEffect,useState } from "react";
 import { useAuthentication } from "../hooks/useAuthentication";
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
+import Loading from "../components/Loading";
 
 
 
@@ -21,6 +22,7 @@ function MyApp({ Component, pageProps }) {
 
 	const [user,setUser]=useState(undefined)
 	const {auth}=useAuthentication()	
+	const[loading, setLoading]=useState(false)
 	const loadingUser=user===undefined
 
 	useEffect(()=>{
@@ -30,7 +32,7 @@ function MyApp({ Component, pageProps }) {
 	})
 
 	if(loadingUser){
-		return <p>Charging...</p>
+		return <Loading loading={loading} setLoading={setLoading}/>
 	}
 
 	return (

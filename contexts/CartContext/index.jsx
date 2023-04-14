@@ -13,13 +13,13 @@ export default function CartProvider({ children }) {
 	
 	const qty=productCart.map((element)=>(<div key={element.id}>{element.qty}</div>))
 
-	
+	const[animate,setAnimate]=useState(false)//Animação do status de quantidade
 
 	
 	function addToCart(obj) {
 		const copyProductCart = [...productCart];
-
 		const BasketArr = copyProductCart.find((product) => product.obj === obj);
+		setAnimate(!animate)
 
 		if (!BasketArr) {
 			copyProductCart.push({ obj, qtd: 1 });
@@ -56,7 +56,7 @@ export default function CartProvider({ children }) {
 
 	return (
 		<CartContext.Provider
-			value={{productCart, addToCart, removeCart, clearCart,Amount,individualqtd,qty }}
+			value={{productCart, addToCart, removeCart, clearCart,Amount,individualqtd,qty,animate }}
 		>
 			{children}
 		</CartContext.Provider>

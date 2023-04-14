@@ -55,7 +55,7 @@ a {
 .cta-btn{
   @apply
   py-2 px-4  bg-black text-white hover:bg-white
-   hover:text-black 
+   hover:text-black  border
 }
 
 .bag-cta-btn{
@@ -107,7 +107,7 @@ a {
 }
 .headless-item{
 @apply
-flex justify-between text-center hover:bg-black  active:bg-slate-400
+flex gap-3  hover:bg-black  active:bg-slate-400
 hover:text-white
 }
 

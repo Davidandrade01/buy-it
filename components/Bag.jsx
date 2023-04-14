@@ -20,6 +20,7 @@ export default function Bag({open,close}) {
  
   
     const{productCart,removeCart,clearCart,Amount,individualqtd}=useContext(CartContext)
+    
     if(!open) return false
   
   return (
@@ -30,13 +31,20 @@ export default function Bag({open,close}) {
         {
         productCart.length==0?
         (
+          <>
+          <div className='m-2 mb-4 flex items-center justify-end cursor-pointer '>
+          <GrFormClose onClick={close} size={20}   />
+          </div>
+          
             <div className={styles.bag_box}>
-                
+            
+                <>
                     <Image src="/images/Empty bag.png" width={200} height={200} alt="go Shopping" />
                     Ups.. Empty Cart! 
                     <Link href='/'> <b>Let´s find something cool !</b> </Link>
-                   
+                </>
             </div>
+            </>
         ):
         (
             <>

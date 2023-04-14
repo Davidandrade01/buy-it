@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
+
+//Componentes
 import { Carousel } from 'react-responsive-carousel';
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import Cards from '../components/Cards'
-import Letter from '../components/Letter';
 import Modal from '../components/Modal'
-
+import Letter from '../components/Letter';
 
 export  async  function getStaticProps() {
 

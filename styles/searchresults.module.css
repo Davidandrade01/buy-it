@@ -1,0 +1,25 @@
+.results_container{
+    border:none;
+    width:700px;
+    height:auto;
+    position:absolute;
+    top:55px;
+    z-index:5000;
+    left:255px;
+    background-color:#fff;
+    list-style-type: none;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1)
+     0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+
+
+}
+
+.results_li{
+margin:8px;
+
+}
+
+.results_li:hover{
+    color:#fff;
+    background-color:#000
+}

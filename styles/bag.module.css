@@ -39,7 +39,11 @@ right:0px;
     
 
 .bag_box{
-    display:flex;
-    flex-direction: column;
-    justify-items: center;
+   display: flex;
+   align-items: center;
+    margin-top: 22%;
+   flex-direction: column;
+
+
+    
 }

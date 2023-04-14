@@ -4,6 +4,7 @@ import { useState,useEffect } from 'react'
 import { useAuthentication } from '../hooks/useAuthentication'
 import { router } from 'next/router'
 import{FiEye,FiEyeOff} from 'react-icons/fi'
+import styles from '../styles/login.module.css'
 
 
 
@@ -49,10 +50,10 @@ useEffect(()=>{
   return (
     <>
  
- <form  onSubmit={handleSubmit}  className="mx-auto max-w-screen-md" >
+ <form  onSubmit={handleSubmit}  className={styles.login_container}  >
       
- <h1 className="mb-4 text-xl"><b>Login</b></h1>
-<div class="relative z-0 w-full mb-6 group">
+ 
+<div className={styles.inputs}>
       <input type="email" id="email" class="floating-input peer" placeholder=" "
       value={email} onChange={(e)=>setEmail(e.target.value)} />   
       <label for="email" className="floating-label">
@@ -60,7 +61,7 @@ useEffect(()=>{
       Email address *</label>
 </div>
 
-<div class="relative z-0 mb-6 group">
+<div className={styles.inputs}>
       <input type={hidepass ? "text":"password"} name="password" id="password" class="floating-input peer" placeholder=" "
       value={password} onChange={(e)=>setPassword(e.target.value)}   />
     
@@ -76,7 +77,7 @@ useEffect(()=>{
 </div>
 
   <div className="mb-4 ">
-        <button  type='submit' className='primary-button'>Login</button>        
+        <button  type='submit' className='cta-btn'>Login</button>        
   </div>
 
   <div className="mb-4 ">
