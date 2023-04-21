@@ -13,6 +13,10 @@
 
 [Api´s](#apis) |
 
+[Heurísticas de Nielsen aplicadas (UX)](#heurísticas-de-nielsen-aplicadas-ux) |
+
+[Links](#links) |
+
 [Dependências](#dependencias) |
 
 
@@ -103,6 +107,20 @@ FakestoreApi | https://fakestoreapi.com/
 DummyJson | https://dummyjson.com/docs/products
 Duminio   |https://api.duminio.com/ptcp
 
+## Heurísticas de Nielsen aplicadas (UX)
+
+* Estética Minimalista
+* Correspondência entre o sistema e o mundo real
+* Visibilidade do Status do Sistema
+* Consistência e padronização.
+
+## Links
+
+links pessoais  | url
+-------------   |------------------
+Linkedin        | www.linkedin.com/in/davidandradefrontendreac
+Github Pages     | https://
+
 ## Dependências
 
 * @headlessui/react": "^1.7.9",
@@ -121,18 +139,6 @@ Duminio   |https://api.duminio.com/ptcp
 * "react-transition-group": "^4.4.5",
 * "uuid": "^9.0.0"
 
-## Heurísticas de Nielsen aplicadas (UX)
 
-* Estética Minimalista
-* Correspondência entre o sistema e o mundo real
-* Visibilidade do Status do Sistema
-* Consistência e padronização.
 
-## Links
 
-links pessoais  | url
-----|----
-Linkedin | www.linkedin.com/in/
-davidandradefrontendreact
-
-Github Pages| https://
