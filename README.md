@@ -13,11 +13,11 @@
 ### Interface
 - [x] Barra de pesquisa com acesso à api
 - [x] Login/Logout
-- [] Favoritos (por desenvolver)
+- [ ] Favoritos (por desenvolver)
 - [x] Bag/carrinho
 - [x] pop-up (modal) do carrinho
 - [x] Adição e remoção de itens
-- [] Histórico de compras(por desenvolver)
+- [ ] Histórico de compras(por desenvolver)
 - [x] Menu DropDown por categorias de produtos
 - [x] Carrossel com cards dos produtos
 - [x] Modal do carrossel com detalhes dos produtos(Preço, marca, detalhes)
@@ -28,9 +28,34 @@
 
 - [x] Login ou registro
 - [x] Feedback de erro, ou sucesso
+>  Catch
+```js
+catch (error) {
+            console.log(error.message)
+            console.log(typeof error.message)
+
+            let systemErrorMessage
+            if(error.message.includes("password")){
+                systemErrorMessage=("Password needs at least 6 characters")
+            }}
+  ```
 - [x] Busca do item pelo card , ou na barra de pesquisa
+
+>Loading Componente ( Uso de Spinner para indicar busca ao usuário)
+
+```js
+{loading &&
+      <Loading/>
+      }
+```      
+
 - [x] Adição de itens no carrinho/remoção
+
+>Quantidade do produto
+
+![Adição/remoção](./public/images//Adi%C3%A7%C3%A3o%20e%20remo%C3%A7%C3%A3o.gif)
+
 - [x] Atualização e feedback visual(fade-in-out) do carrinho(bag)
 - [x] Checkout(preenchimento de endereço)
-- [x] Pagamento (Conexão com o pay-pal)
-- [] Conclusão do pedido( por desenvolver)
+- [x] Pagamento (Conexão com o **pay-pal**)
+- [ ] Conclusão do pedido( página por desenvolver)
