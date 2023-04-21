@@ -1,5 +1,5 @@
 <p align="center" width="100%">
-    <img width="33%" src="./public/images/logobuyit.png"> 
+    <img width="50%" src="./public/images/logobuyit.png"> 
 </p>
 
 #### Menu
@@ -29,7 +29,7 @@
   Para implementa-lo inicialmente foram aplicada algum conceitos de experiência do usuário que foram traduzidas em código integrando uma jornada mais clara. 
 
 <p align="center" width="100%">
-    <img width="33%" src=" ./public/images/Apresenta%C3%A7%C3%A3o.gif.gif"> 
+    <img width="50%" src=" ./public/images/Apresenta%C3%A7%C3%A3o.gif.gif"> 
 </p>
 ## Stack
 
@@ -95,7 +95,7 @@ catch (error) {
 >Quantidade do produto
 
 <p align="center" width="100%">
-    <img width="33%" src="./public/images//Adi%C3%A7%C3%A3o%20e%20remo%C3%A7%C3%A3o.gif"> 
+    <img width="50%" src="./public/images//Adi%C3%A7%C3%A3o%20e%20remo%C3%A7%C3%A3o.gif"> 
 </p>
 
 - [x] Atualização e feedback visual(fade-in-out) do carrinho(bag)
