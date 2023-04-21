@@ -10,5 +10,27 @@
 
 ## Seções desenvolvidas
 
+### Interface
 - [x] Barra de pesquisa com acesso à api
-- [x] 
+- [x] Login/Logout
+- [] Favoritos (por desenvolver)
+- [x] Bag/carrinho
+- [x] pop-up (modal) do carrinho
+- [x] Adição e remoção de itens
+- [] Histórico de compras(por desenvolver)
+- [x] Menu DropDown por categorias de produtos
+- [x] Carrossel com cards dos produtos
+- [x] Modal do carrossel com detalhes dos produtos(Preço, marca, detalhes)
+- [x] Menu DropDown por categorias de produtos
+- [x] Newsletter funcional
+
+### Jornada do usuário 
+
+- [x] Login ou registro
+- [x] Feedback de erro, ou sucesso
+- [x] Busca do item pelo card , ou na barra de pesquisa
+- [x] Adição de itens no carrinho/remoção
+- [x] Atualização e feedback visual(fade-in-out) do carrinho(bag)
+- [x] Checkout(preenchimento de endereço)
+- [x] Pagamento (Conexão com o pay-pal)
+- [] Conclusão do pedido( por desenvolver)
