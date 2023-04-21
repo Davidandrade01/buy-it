@@ -7,7 +7,7 @@
 
 [Stack](#stack)  |
 
-[Seçoes desenvolvidas](#seções-desenvolvidas) |
+[Seções desenvolvidas](#seções-desenvolvidas) |
 
 [Interface](#interface) |
 
@@ -31,6 +31,7 @@
 <p align="center" width="100%">
     <img width="50%" src=" ./public/images/Apresenta%C3%A7%C3%A3o.gif.gif"> 
 </p>
+
 ## Stack
 
 * JavaScript 
