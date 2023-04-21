@@ -1,5 +1,21 @@
 ![logo Buyit](./public/images/logobuyit.png)
 
+#### Menu
+[Nota](#nota)  |
+
+[Stack](#stack)  |
+
+[Seçoes desenvolvidas](#seções-desenvolvidas) |
+
+[Interface](#interface) |
+
+[Jornada do usuário](#jornada-do-usuário) | 
+
+[Api´s](#apis) |
+
+[Dependências](#dependencias) |
+
+
 # Nota
  O **Buyit** é um estudo de ecommerce que envolve suas principais etapas de login ao checkout. A ideia de criação do projeto com a intenção de compor meu portifólio de estudos dada a minha recente formação na área de front-end. 
 
@@ -14,7 +30,7 @@
 
 Biblioteca | Framework | Recursos
 -----------|---------- |---------
-**React**      |**Next.js**    |  Hooks, Context, components, Props
+**React**      |**Next.js**    |  Hooks, Context, Components, Props
 
 
 * Html
@@ -22,7 +38,7 @@ Biblioteca | Framework | Recursos
 * Css
   * **Sass**
   * **Tailwind**
-  
+
 * Base de Dados para autenticação
   * **FireBase** 
 
@@ -87,7 +103,7 @@ FakestoreApi | https://fakestoreapi.com/
 DummyJson | https://dummyjson.com/docs/products
 Duminio   |https://api.duminio.com/ptcp
 
-## Dependencias
+## Dependências
 
 * @headlessui/react": "^1.7.9",
 * @paypal/react-paypal-js": "^7.8.2",
@@ -103,5 +119,20 @@ Duminio   |https://api.duminio.com/ptcp
 * "react-router-dom": "^6.8.0",
 * "react-spinners": "^0.13.8",
 * "react-transition-group": "^4.4.5",
-* "typescript": "^4.9.5",
 * "uuid": "^9.0.0"
+
+## Heurísticas de Nielsen aplicadas (UX)
+
+* Estética Minimalista
+* Correspondência entre o sistema e o mundo real
+* Visibilidade do Status do Sistema
+* Consistência e padronização.
+
+## Links
+
+links pessoais  | url
+----|----
+Linkedin | www.linkedin.com/in/
+davidandradefrontendreact
+
+Github Pages| https://
