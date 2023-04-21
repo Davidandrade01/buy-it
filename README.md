@@ -51,7 +51,7 @@ Biblioteca | Framework | Recursos
   * **FireBase** 
 
 * Integração com Api de pagamento
- * **Pay-pal**
+  * **Pay-pal**
 
 
 ## Seções desenvolvidas
