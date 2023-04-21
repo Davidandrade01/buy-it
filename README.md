@@ -50,6 +50,9 @@ Biblioteca | Framework | Recursos
 * Base de Dados para autenticação
   * **FireBase** 
 
+* Integração com Api de pagamento
+ * **Pay-pal**
+
 
 ## Seções desenvolvidas
 
