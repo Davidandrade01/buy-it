@@ -8,6 +8,25 @@
 
 ![Buyit](./public/images/Apresenta%C3%A7%C3%A3o.gif.gif)
 
+## Stack
+
+* JavaScript 
+
+Biblioteca | Framework | Recursos
+-----------|---------- |---------
+**React**      |**Next.js**    |  Hooks, Context, components, Props
+
+
+* Html
+
+* Css
+  * **Sass**
+  * **Tailwind**
+  
+* Base de Dados para autenticação
+  * **FireBase** 
+
+
 ## Seções desenvolvidas
 
 ### Interface
@@ -21,7 +40,6 @@
 - [x] Menu DropDown por categorias de produtos
 - [x] Carrossel com cards dos produtos
 - [x] Modal do carrossel com detalhes dos produtos(Preço, marca, detalhes)
-- [x] Menu DropDown por categorias de produtos
 - [x] Newsletter funcional
 
 ### Jornada do usuário 
@@ -59,3 +77,31 @@ catch (error) {
 - [x] Checkout(preenchimento de endereço)
 - [x] Pagamento (Conexão com o **pay-pal**)
 - [ ] Conclusão do pedido( página por desenvolver)
+
+
+## Api´s
+
+Api| url
+---|---
+FakestoreApi | https://fakestoreapi.com/
+DummyJson | https://dummyjson.com/docs/products
+Duminio   |https://api.duminio.com/ptcp
+
+## Dependencias
+
+* @headlessui/react": "^1.7.9",
+* @paypal/react-paypal-js": "^7.8.2",
+* firebase: "^9.16.0"
+* "next": "^13.1.2",
+* "react": "18.2.0",
+* "react-dom": "18.2.0",
+* "react-firebase-hooks": "^5.1.1",
+* "react-hook-form": "^7.43.0",
+* "react-icons": "^4.7.1",
+* "react-multi-carousel": "^2.8.2",
+* "react-responsive-carousel": "^3.2.23",
+* "react-router-dom": "^6.8.0",
+* "react-spinners": "^0.13.8",
+* "react-transition-group": "^4.4.5",
+* "typescript": "^4.9.5",
+* "uuid": "^9.0.0"
