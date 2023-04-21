@@ -1,1 +1,1 @@
-                  ![logo Buyit](../buy-it/public/images/logobuyit.png)
+![logo Buyit](./public/images/logobuyit.png)
