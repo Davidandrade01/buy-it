@@ -10,5 +10,5 @@
 
 ## Seções desenvolvidas
 
-- [x]Barra de pesquisa com acesso à api
-- [x]
+- [x] Barra de pesquisa com acesso à api
+- [x] 
