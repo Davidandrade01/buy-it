@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import CheckoutWizard from '../components/shipping'
 import { PayPalButtons } from '@paypal/react-paypal-js'
 import { router } from 'next/router'
-import { CartContext } from '../Contexts/cartContext'
+import { CartContext } from "../contexts/CartContext";
 import { useAuthValue } from "../contexts/AuthContext";
 
 
