@@ -25,7 +25,7 @@ import SearchResults from "./Searchresults";
 
 
 //Context and hooks
-import { CartContext } from "../Contexts/cartContext";
+import { CartContext } from "../contexts/CartContext";
 import { useAuthValue } from "../contexts/AuthContext";
 
 

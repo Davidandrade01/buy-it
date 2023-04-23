@@ -1,5 +1,6 @@
 
 import React from 'react'
+
 import styles from '../../styles/productid.module.css'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -7,7 +8,7 @@ import { useState } from 'react'
 import {CiTrash} from 'react-icons/ci'
 
 //context
-import { CartContext } from '../../Contexts/cartContext'
+import { CartContext } from '../../contexts/CartContext'
 import { useContext } from 'react'
 
 

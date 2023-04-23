@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 import {AiFillStar} from 'react-icons/ai'
 import Link from 'next/link'
 import { useContext } from 'react'
-import { CartContext } from '../Contexts/cartContext'
+import { CartContext } from '../contexts/CartContext'
 import Image from 'next/image'
 import {MdOutlineFavoriteBorder} from "react-icons/md";
 import { useState } from 'react'

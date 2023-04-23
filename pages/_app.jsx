@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import Layout from "../components/Layout";
-import CartProvider from "../Contexts/cartContext";
+import CartProvider from "../contexts/CartContext";
 import { AuthProvider } from "../contexts/AuthContext";
 import { onAuthStateChanged } from "firebase/auth";
 import { useEffect,useState } from "react";

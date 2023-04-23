@@ -10,14 +10,15 @@ import {CiTrash} from 'react-icons/ci'
 
 
 //Context and hooks
-import { CartContext } from "../Contexts/cartContext";
+import CartProvider, { CartContext } from "../contexts/CartContext";
+import Bag from './Bag'
 
 
 
 
 export default function Modal({setOpenmodal, product}) {
   
-
+  
   const {productCart, addToCart, removeCart, clearCart,Amount,individualqtd}=useContext(CartContext)
 
   const[favcolor,setFavcolor]=useState(false)
@@ -91,16 +92,19 @@ export default function Modal({setOpenmodal, product}) {
               </div>
 
               
-                <button className={styles.btn_discard}> 
+                <button onClick={()=>clearCart(product)} className={styles.btn_discard}> 
                  <CiTrash size={20}/>  Discard
                  </button>
               
 
               
               </section>
+
+              
               
             </div>
-            <button style={{border:"1px solid black"}} className='cta-btn w-full '>See My Bag</button>
+
+            <button  style={{border:"1px solid black"}} className='cta-btn w-full '>See My Bag</button>
            </div>
 
           
@@ -113,6 +117,7 @@ export default function Modal({setOpenmodal, product}) {
           </div>
 
         </div>
+        
     </div>
     
   )

@@ -12,16 +12,17 @@ import {SlBag}from 'react-icons/sl'
 
 //Context
 import { useContext } from 'react'
-import { CartContext } from '../Contexts/cartContext'
+import { CartContext } from '../contexts/CartContext'
 
 import styles from '../styles/bag.module.css'
  
 export default function Bag({open,close}) {
- 
+  
   
     const{productCart,removeCart,clearCart,Amount,individualqtd}=useContext(CartContext)
     
     if(!open) return false
+    
   
   return (
     <>
@@ -93,7 +94,7 @@ export default function Bag({open,close}) {
                   
                     <div className='flex flex-col gap-2 mr-4'>
                       <p> € <b>{product.obj.price}</b> </p>
-                      <button onClick={()=>removeCart(product.obj)} className='flex items-end' style={{color:"#FF0505"}}>
+                      <button onClick={()=>clearCart(product.obj)} className='flex items-end' style={{color:"#FF0505"}}>
                         <CiTrash cursor='pointer' color='#FF0505' size={20} /> 
                         <span className='text-xs cursor-pointer'>Discard</span>   
                       </button>                  
