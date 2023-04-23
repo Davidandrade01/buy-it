@@ -4,7 +4,6 @@ import React, { useState } from 'react'
 import CheckoutWizard from '../components/shipping'
 import { useForm } from 'react-hook-form'
 import { useRouter } from 'next/router'
-import { CartContext } from '../Contexts/cartContext'
 import { useContext } from 'react'
 import { setItem,getItem } from '../services/LocalStorageproducts'
 
@@ -14,7 +13,7 @@ import { setItem,getItem } from '../services/LocalStorageproducts'
 export default function ShippingScreen  () {
   const {register,setFocus,handleSubmit,setValue}=useForm()
   const router=useRouter()
-  const{Amount}=useContext(CartContext)
+ 
 
 
 
