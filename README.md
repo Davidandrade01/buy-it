@@ -1,5 +1,5 @@
 <p align="center" width="100%">
-    <img width="50%" src="./public/images/logobuyit.png"> 
+    <img width="33%" src="./public/images/logobuyit.png"> 
 </p>
 
 #### Menu
@@ -127,7 +127,7 @@ Duminio   |https://api.duminio.com/ptcp
 
 links pessoais  | url
 -------------   |------------------
-Linkedin        | www.linkedin.com/in/davidandradefrontendreac
+Linkedin        |linkedin.com/in/davidandradefrontendreact
 Github Pages     | https://
 
 ## Dependências
