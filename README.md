@@ -128,7 +128,7 @@ Duminio   |https://api.duminio.com/ptcp
 links pessoais  | url
 -------------   |------------------
 Linkedin        |https://linkedin.com/in/davidandradefrontendreact
-Github Pages     | https://
+Github Pages     | https:// https://buy-7f362jkxd-davidandrade01.vercel.app/
 
 ## Dependências
 
