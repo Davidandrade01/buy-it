@@ -138,7 +138,7 @@ Vercel          | https://buy-7f362jkxd-davidandrade01.vercel.app/
 * "next": "^13.1.2",
 * "react": "18.2.0",
 * "react-dom": "18.2.0",
-* "react-firebase-hooks": "^5.1.1",
+* "react-firebase-hooks": "^5.1.,1",
 * "react-hook-form": "^7.43.0",
 * "react-icons": "^4.7.1",
 * "react-multi-carousel": "^2.8.2",
